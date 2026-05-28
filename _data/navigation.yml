@@ -1,1 +1,7 @@
-
+main:
+  - title: "Course Project"
+    url: /project/
+  - title: "Portfolio"
+    url: /portfolio/
+  - title: "About"
+    url: /about/
