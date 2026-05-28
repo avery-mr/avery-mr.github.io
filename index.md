@@ -1,6 +1,6 @@
 ---
 layout: home
-
+author_profile: false
 title: "Weekly Standups"
 ---
 
