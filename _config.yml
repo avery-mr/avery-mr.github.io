@@ -1,3 +1,22 @@
-theme: jekyll-theme-slate
-title: Mitchell Avery - CSPB 3112
-description: A quick GitHub Pages site for class
+title: "Mitchell Avery"
+subtitle: "CSPB Professional Development"
+name: "Mitchell Avery?
+description: "Weekly learning log and project portfolio."
+
+remote_theme: "mmistakes/minimal-mistakes"
+
+plugins:
+  - jekyll-include-cache
+
+minimal_mistakes_skin: "default"
+
+url: "https://avery-mr.github.io"
+baseurl: ""
+
+include:
+  - _pages
+
+author:
+  name: "Mitchell Avery"
+  bio: "3D visualist and technical artist exploring real-time graphics, shaders, and technical art pipelines."
+  location: "Denver, CO"
