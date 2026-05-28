@@ -5,8 +5,6 @@ layout: single
 author_profile: false
 ---
 
-# About
-
 I am a Senior 3D Artist and Technical Artist currently working in architectural visualization and virtual design & construction, with a background spanning film, design, VFX, real-time rendering, and interactive media.
 
 Over the past decade I have worked across photorealistic rendering, animation, VR, compositing, procedural simulation, and visualization pipelines using tools such as 3ds Max, VRay, Unreal Engine, Houdini, TyFlow, After Effects, and Resolve. My professional work has focused heavily on creating high-quality visualizations while also improving production workflows and technical processes.
