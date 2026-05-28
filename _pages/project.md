@@ -4,8 +4,6 @@ permalink: /project/
 layout: single
 ---
 
-# Course Project
-
 This section will present the main work from my professional development project.
 
 ## Project Goal
