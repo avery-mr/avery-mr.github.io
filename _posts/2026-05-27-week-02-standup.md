@@ -1,6 +1,6 @@
 ---
-title: "Week 03 Standup"
-date: 2026-06-04
+title: "Week 02 Standup"
+date: 2026-05-27
 categories:
   - standup
 tags:
