@@ -28,22 +28,22 @@
                 directions I am leaning toward a curriculum focused on OpenGL fundamentals and shader programming which I feel could
                 help direct my career path towards the more technical side of computer graphics and also give me a deeper understanding
                 of the underlying concepts that power many of the tools I use professionally.
-                
+                <br>
                 I spent some time setting up my GitHub pages site and experimenting with different themes and layouts. I want the site
                 to serve as both a development journal and a portfolio of work completed throughout CSPB, so in addition to documenting
                 weekly progress, I would eventually like to create dedicated pages for project showcases and links to other GitHub
                 repositories. I am considering building parts of the site directly with HTML and CSS rather than relying entirely on a
                 Jekyll theme but that is certainly not a priority.
-                
+                <br>
                 I picked up Computer Graphics Programming in OpenGL and spent a little time reviewing other resources like LearnOpenGL
                 and The Book of Shaders. My initial thought was to focus on graphics fundamentals first, understanding the rendering
                 pipeline, transformations, coordinate spaces, and shader basics, and then moving into lighting, materials, and more
                 creative shader development.
-                
+                <br>
                 One challenge I am finding is that it is rather difficult to build a detailed curriculum and schedule before I have
                 enough familiarity with the material to really judge what can realistically be accomplished within a single semester. I
                 will try to lay out as best as possible a path to a realistic goal, but it may prove to be a bit of a moving target.
-                
+                <br>
                 Looking ahead to next week, I need to finalize the project scope, establish a rough roadmap, and start working through
                 the introductory OpenGL material. I really want to avoid simply consuming tutorials and actually build small tangible
                 graphics projects as early as possible.
@@ -60,7 +60,7 @@
                 study of OpenGL and computer graphics might realistically look like. I was eager and tempted to dive in immediately to
                 some of my source material but I decided to spend a little more time trying to map out and understand the major concepts
                 and what could define milestones throughout the semester.
-                
+                <br>
                 The most challenging aspect of ths so far has been determining how to organize the curriculum around meaningful
                 deliverables, and based on the professor's feedback I've been thinking about the project as a sequence of increasingly
                 complex graphics demonstrations with each milestone resulting in a visible artifact that demonstrates a specific
@@ -69,7 +69,7 @@
                 imagined as individual milestones could actually be entire courses on their own, and because of the that I am trying to
                 focus less on mastering every aspect and more on building a solid foundation that can support future learning after
                 CSPB.
-                
+                <br>
                 Next week I plan to polish out the details of my roadmap and deliverable demos and begin working through introductory
                 OpenGL material. The first practical hurdle will be setting up a stable OpenGL dev environment and deciding which
                 toolchain I will use, configuring libraries, C++ compilers, etc.
@@ -79,7 +79,24 @@
         <article>
             <h2>Week 04</h2>
             <p>2026-06-11</p>
-            <p>render window....</p>
+            <p>
+                This week I focused on my first milestone in OpenGL: setting up the environment. The heavy lift has been getting the
+                basic project structure in place, setting up CMake and understanding CmakeLists, linking GLFW and GLAD correctly (and
+                learning how they fit into the pipeline) and getting my first C++ program to compile and run. The result was getting a
+                window to open successfully which is not as trivial as expected.
+                <br>
+                Once the window was running I added a callback to handle resizing, added some very basic keyboard input processing, then
+                experimented with simple rendering loop behavior and was able to change the background color. I spent some time learning
+                more about frame buffer clearing and buffer swapping.
+                <br>
+                This week felt like clearing a first hurdle. It has been a while since I've done anything with C++ so dusting off the
+                cobwebs a bit. Obviously not doing anything complex for a while but I now feel like I have a working foundation where I
+                can compile code, open a window, initialize some OpenGL functions, and see some results. Next step will be to move from
+                simply clearing the screen to drawing my first vertices and triangles diving into shaders and the actual graphics
+                pipeline. It is surreal working throughout the day on highly complex 3d scene files with hundreds of millions of polys
+                and advanced raytracing and global illumination, and then jumping into this project and getting extremely excited about
+                managing to draw a red triangle.
+            </p>
         </article>
 
         <hr>
