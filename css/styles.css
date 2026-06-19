@@ -3,7 +3,7 @@ body {
     margin: 0 auto;
     padding: 20px;
 
-    background-color: #e7e7e7;
+    background-color: #b9b9b9;
 
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
@@ -12,7 +12,7 @@ body {
 }
 
 .container {
-    background-color: #fff;
+    background-color: palevioletred;
     padding: 30px;
 }
 
@@ -27,6 +27,7 @@ nav a {
 }
 
 a:hover {
+    color: red;
     text-decoration: underline;
 }
 
@@ -37,6 +38,7 @@ h1 {
 }
 
 h2 {
+    color: #1f4b99;
     margin-top: 40px;
 }
 
