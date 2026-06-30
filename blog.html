@@ -189,6 +189,60 @@
           both through LearnOpenGL and The Book of Shaders.
         </p>
       </article>
+      <hr />
+      <article>
+        <h2>Week 06</h2>
+        <p>2026-06-25</p>
+        <p>
+          This past week I focused on OpenGL shaders and started digging into
+          how data flows through the graphics pipeline. I learned how vertex
+          data is laid out in memory and how glVertexAttribPointer describes the
+          layout to the vertex shader, dealing with interleaved vertex data,
+          stride offsets and attribute locations. On the shader side I worked
+          with both vertex attributes to pass color information through the
+          vertex shader to the fragment shader, and also worked with uniforms to
+          pass time values into the GPU. I then used sine functions to animate
+          vertex positions, color values and alpha over time. I messed around
+          with different color values to see how the rasterizer smoothly
+          interpolates values between verts.
+        </p>
+        <p>
+          One of the biggest improvements this week was reorganizing the project
+          structure. I separated shader source into external GLSL files and
+          created a C++ shader class to help with compilation and linking which
+          helped clean up the codebase.
+        </p>
+        <p>
+          Looking ahead, I’ve decided to skip texturing for now. Even though UV
+          mapping and texturing are obviously important, I feel like my primary
+          goal for the project is understanding the graphics pipeline and I’d
+          rather continue into transformations, coordinate systems, cameras, and
+          lighting. I can track back to textures and UVs after that.
+        </p>
+        <p>
+          The biggest hurdle right now is that transformations look like a
+          significant jump in complexity. Matrix math and multiple coordinate
+          spaces are considerably more abstract than what I’ve done so far and
+          are pretty daunting so I’m planning on spending extra time making sure
+          I really understand the concepts.
+        </p>
+        <p>
+          Outside of the graphics work I also need to spend time improving my
+          website. I think I had misunderstood last week’s expectations and
+          though the assignment was to establish the framework for the site and
+          continue to develop it throughout the semester. I haven’t had enough
+          time to finish that yet, so improving the site will be another
+          priority over the next week.
+        </p>
+        <p>
+          Another challenge I’m still thinking through is how to best document
+          and present my work. So far I’ve been saving screenshots and short MP4
+          recordings of each step, which I suppose will ultimately become the
+          artifacts for the portfolio. As the project grows I need to figure out
+          how to organize the demos into a sort of narrative that shows the
+          technical progress over time.
+        </p>
+      </article>
     </div>
   </body>
 </html>
