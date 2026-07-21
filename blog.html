@@ -243,6 +243,153 @@
           technical progress over time.
         </p>
       </article>
+      <hr />
+      <article>
+        <h2>Week 07 - Mid-Semester Project Update</h2>
+        <p>2026-07-02</p>
+        <br />
+        <h3>Project Overview</h3>
+        <p>
+          My project focuses on learning the fundamentals of modern computer
+          graphics through OpenGL and C++. Rather than using a game engine such
+          as Unity or Unreal Engine, I wanted to better understand the graphics
+          pipeline by working directly with OpenGL. My original goals were to
+          learn shader programming, become comfortable with the rendering
+          pipeline, and become more comfortable coding and compiling, and
+          building reusable utilities in C++ utilities.
+        </p>
+        <p>
+          As I have progressed through the first half of the project my goals
+          have shifted only slightly. Instead of moving quickly through
+          tutorials, I have spent more time building a clean, reusable project
+          structure and strengthening my understanding of core concepts before
+          moving on to more advanced topics. I also decided to postpone textures
+          so I could focus on transformations, cameras, and eventually lighting,
+          which are more closely aligned with my long-term interests in graphics
+          programming and technical art.
+        </p>
+        <h3>Accomplishments</h3>
+        <p>
+          So far I have successfully built a modern OpenGL development
+          environment using CMake, GLFW, GLAD, and Visual Studio. I have
+          implemented rendering examples using vertex buffers, vertex arrays,
+          element buffers, multiple shaders, and indexed drawing while gaining a
+          much better understanding of how data flows through the graphics
+          pipeline.
+        </p>
+        <p>
+          One of the most valuable parts of the project has been learning GLSL
+          shader programming. I have implemented vertex and fragment shaders,
+          worked with vertex attributes and uniforms, and created animated
+          effects driven by time-based calculations and mouse cursor position. I
+          also created a reusable Shader class, and have so far restructured the
+          organization of my C++ project a couple different times into something
+          more maintainable and scalable, with shared utilities and CMake helper
+          functions.
+        </p>
+        <h3>Reflection and Remaining Goals</h3>
+        <p>
+          Overall, I feel that the project is progressing well and remains
+          aligned with my original objectives. I feel like I am developing a
+          much stronger understanding of the graphics pipeline than I did at the
+          beginning of the semester.
+        </p>
+        <p>
+          During the remainder of the semester, I plan to continue building on
+          this foundation by implementing camera systems, exploring coordinate
+          spaces in more depth, and introducing basic lighting techniques. I
+          also plan to continue improving my portfolio website by organizing
+          project artifacts into polished demonstrations that showcase both the
+          technical implementation and the concepts I have learned.
+        </p>
+      </article>
+      <hr />
+      <article>
+        <h2>Week 08</h2>
+        <p>2026-07-09</p>
+        <p>
+          This week I ended up bouncing back and forth between textures and
+          shaders and view transformations. I went back and spent some more time
+          on UVs, experimented with blending textures with vertex colors, then
+          blended two textures together in the fragment shader using a mix
+          factor. As a small interactive exercise I hooked up keyboard input so
+          the up and down arrow keys adjust texture opacity in real time.
+        </p>
+        <p>
+          On the transformations side I implemented model, view and perspective
+          transformations, and everything finally looks like actual 3D instead
+          of squares and triangles on a flat screen. I still need to finish this
+          section by adding movement and camera controls so I can start
+          navigating around the scene.
+        </p>
+        <p>
+          I continued to spend a fair amount of time cleaning up the project
+          structure. As I collect more and more different shaders for different
+          effects, and as code gets longer and longer I need to make sure
+          everything is organized effectively and start leveraging reusable code
+          and utility classes and assets. I cleaned up the CMake project so
+          adding new demos is much easier.
+        </p>
+        <p>
+          I like the flow of LearnOpenGL and I've noticed that topics sort of
+          circle back around after learning something new. Pieces are starting
+          to feel like they're falling into place, rather than just a bunch of
+          isolated openGL functions. I really enjoy how each new topic builds on
+          the last, and that I can keep reusing code from previous exercises and
+          just add new functionality instead of starting over every week. It's
+          nice having shaders separated from the application code so I can write
+          and link a completely different pair of vertex and fragment shaders
+          and get an entirely different visual result without having to change
+          much of the C++ code.
+        </p>
+      </article>
+      <hr />
+      <article>
+        <h2>Week 09</h2>
+        <p>2026-07-16</p>
+        <p>
+          This week I finished up the 'basics' of OpenGL. I worked more with
+          transformation matrices and now finally have model, view and
+          perspective transformations working together. I added a moveable
+          camera with keyboard and mouse controls, moved the camera into it's
+          own separate class, and now the scenes and demos are feeling much more
+          interactive and actually 3d instead of just displaying a triangle or
+          square from a fixed viewpoint.
+        </p>
+        <p>
+          I added a sphere mesh alongside the cube geometry I was already using
+          and started rendering multiple objects in the same scene. I also
+          experimented with randomizing their positions, scale, rotation, and
+          movement. I'd like to start separating out the geometry into their own
+          mesh classes as well so I have reusable primitives I can implement
+          instead of arrays of vertices.
+        </p>
+        <p>
+          One of the main hurdles was keeping track of which transformations
+          should happen in local space versus world space. Small changes to the
+          order of translation, rotation and scaling can create very different
+          results, and I spend some time debugging objects that weren't
+          displaying as I anticipated. The camera controls also took quite a bit
+          of adjustment getting the mouse input, pitch limits and frame timing
+          to feel right. The math involved with camera angles and perspective
+          transformations is really tough for me to get my head around but
+          luckily most of that is abstracted away and taken care of.
+        </p>
+        <p>
+          Next up: Lighting and Materials. I want to begin with Phong shaders
+          with ambient, diffuse and specular lighting, then adding surface
+          normals, diving into more complex material properties, and light
+          sources that can move through the scene. From there I should be able
+          to combine the textures, camera controls, xforms, and start putting
+          out some more complex and visually interesting
+        </p>
+      </article>
+      <hr />
+      <aritcle>
+        <h2>Week 10</h2>
+        <p>2026-07-23</p>
+      </aritcle>
+
     </div>
   </body>
 </html>
