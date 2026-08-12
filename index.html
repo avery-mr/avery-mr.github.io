@@ -2,18 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="veiwport" content="width=devide-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Mitchell Avery — computer science student and technical artist exploring graphics programming, OpenGL, real-time rendering, and visualization systems."
+    />
+
     <link rel="stylesheet" href="css/styles.css" />
-    <title>Mitchell Avery</title>
+
+    <title>Mitchell Avery | Computer Graphics & Computer Science</title>
   </head>
 
   <body>
     <div class="container">
-      <header>
-        <h1>Mitchell Avery</h1>
 
-        <nav>
-          <a href="index.html">Home</a>
+      <header class="site-header">
+        <a class="site-name" href="index.html">Mitchell Avery</a>
+
+        <nav aria-label="Main navigation">
+          <a class="active" href="index.html">Home</a>
           <a href="projects.html">Projects</a>
           <a href="blog.html">Blog</a>
           <a href="resume.html">Resume</a>
@@ -21,53 +29,125 @@
         </nav>
       </header>
 
-      <hr />
 
-      <section>
-        <h2>About Me</h2>
+      <main>
 
-        <p>
-          I am a Computer Science student at the University of Colorado Boulder
-          and a professional 3D visualization artist with experience in
-          architectural visualization, computer graphics, and digital content
-          creation.
-        </p>
+        <!-- Hero -->
+        <section class="hero">
+          <p class="eyebrow">Computer Science + Computer Graphics</p>
 
-        <p>
-          My current interests include graphics programming, OpenGL, shader
-          development, technical art, visualization pipelines, USD workflows,
-          and software development.
-        </p>
-      </section>
-      <section>
-        <h2>Current Course Project</h2>
+          <h1>Mitchell Avery</h1>
 
-        <p>
-          This semester I am building a technical graphics portfolio centered
-          around OpenGL. The project consists of a series of increasingly
-          advanced graphics demonstrations covering rendering fundamentals,
-          shaders, textures, transformations, lighting, and procedural effects.
-        </p>
-        <p>Progress is documented in the <a href="blog.html">Course Project Blog</a>.</p>
-      </section>
+          <p class="lede">
+            Computer science student and professional 3D visualization artist
+            exploring graphics programming, real-time rendering, shaders, and
+            the systems behind digital imagery.
+          </p>
 
-      <sections>
-        <h2>Career Interests</h2>
+          <div class="hero-links">
+            <a class="button" href="projects.html">View Projects</a>
+            <a class="button secondary" href="blog.html">Course Journal</a>
+          </div>
+        </section>
 
-        <ul>
-          <li>Graphics Programming</li>
-          <li>Technical Art</li>
-          <li>Real-Time Rendering</li>
-          <li>Visualization Pipelines</li>
-          <li>Computer Vision</li>
-          <li>Software Development</li>
-        </ul>
-      </sections>
+
+        <!-- About -->
+        <section>
+          <span class="section-label">01 / About</span>
+
+          <h2>From visualization to the rendering pipeline.</h2>
+
+          <p class="section-intro">
+            I am a Computer Science student at the University of Colorado
+            Boulder and a professional 3D visualization artist with experience
+            in architectural visualization, computer graphics, and digital
+            content creation.
+          </p>
+
+          <p>
+            My current interests include graphics programming, OpenGL, shader
+            development, technical art, visualization pipelines, USD workflows,
+            and software development.
+          </p>
+        </section>
+
+
+        <!-- Current Project -->
+        <section>
+          <span class="section-label">02 / Current Course Project</span>
+
+          <div class="project-callout">
+
+            <div>
+              <p class="project-number">OPENGL / C++ / GLSL</p>
+
+              <h2>Building graphics from the pipeline up.</h2>
+
+              <p class="section-intro">
+                This semester I am building a technical graphics portfolio
+                centered around OpenGL.
+              </p>
+
+              <p>
+                The project consists of a series of increasingly advanced
+                graphics demonstrations covering rendering fundamentals,
+                shaders, textures, transformations, lighting, and procedural
+                effects.
+              </p>
+
+              <p>
+                Progress, experiments, challenges, and technical notes are
+                documented throughout the
+                <a href="blog.html">Course Project Blog</a>.
+              </p>
+
+              <div class="hero-links">
+                <a class="button" href="projects.html">
+                  Explore OpenGL Project
+                </a>
+              </div>
+            </div>
+
+            <aside class="project-details" aria-label="Project details">
+              <p>TYPE / Independent Study</p>
+              <p>FOCUS / Graphics Programming</p>
+              <p>API / OpenGL</p>
+              <p>LANGUAGE / C++ + GLSL</p>
+              <p>STATUS / In Development</p>
+            </aside>
+
+          </div>
+        </section>
+
+
+        <!-- Interests -->
+        <section>
+          <span class="section-label">03 / Areas of Interest</span>
+
+          <h2>Technical + visual.</h2>
+
+          <p class="section-intro">
+            I am particularly interested in work at the intersection of
+            software, graphics, and digital content creation.
+          </p>
+
+          <ul class="interest-grid">
+            <li>Graphics Programming</li>
+            <li>Technical Art</li>
+            <li>Real-Time Rendering</li>
+            <li>Visualization Pipelines</li>
+            <li>Computer Vision</li>
+            <li>Software Development</li>
+          </ul>
+        </section>
+
+      </main>
+
 
       <footer>
-        <hr />
         <p>© 2026 Mitchell Avery</p>
       </footer>
+
     </div>
   </body>
 </html>
