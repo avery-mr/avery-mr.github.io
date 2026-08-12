@@ -3,393 +3,477 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Mitchell Avery's course journal documenting the development of an OpenGL graphics programming portfolio."
+    />
+
     <link rel="stylesheet" href="css/styles.css" />
-    <title>Weekly Course Project Blog</title>
+
+    <title>Course Journal | Mitchell Avery</title>
   </head>
 
   <body>
     <div class="container">
-      <header>
-        <h1>Projects</h1>
-        <nav>
+      <header class="site-header">
+        <a class="site-name" href="index.html">Mitchell Avery</a>
+
+        <nav aria-label="Main navigation">
           <a href="index.html">Home</a>
           <a href="projects.html">Projects</a>
-          <a href="blog.html">Blog</a>
+          <a class="active" href="blog.html">Blog</a>
           <a href="resume.html">Resume</a>
           <a href="contact.html">Contact</a>
         </nav>
       </header>
-      <hr />
-      <article>
-        <h2>Week 02</h2>
 
-        <p>2026-05-27</p>
+      <main>
+        <section class="page-intro">
+          <p class="eyebrow">Course Journal / Summer 2026</p>
 
-        <p>
-          This week I mainly focused on defining the topic and scope of my
-          project. After considering several different possible directions I am
-          leaning toward a curriculum focused on OpenGL fundamentals and shader
-          programming which I feel could help direct my career path towards the
-          more technical side of computer graphics and also give me a deeper
-          understanding of the underlying concepts that power many of the tools
-          I use professionally.
-        </p>
-        <p>
-          I spent some time setting up my GitHub pages site and experimenting
-          with different themes and layouts. I want the site to serve as both a
-          development journal and a portfolio of work completed throughout CSPB,
-          so in addition to documenting weekly progress, I would eventually like
-          to create dedicated pages for project showcases and links to other
-          GitHub repositories. I am considering building parts of the site
-          directly with HTML and CSS rather than relying entirely on a Jekyll
-          theme but that is certainly not a priority.
-        </p>
-        <p>
-          I picked up Computer Graphics Programming in OpenGL and spent a little
-          time reviewing other resources like LearnOpenGL and The Book of
-          Shaders. My initial thought was to focus on graphics fundamentals
-          first, understanding the rendering pipeline, transformations,
-          coordinate spaces, and shader basics, and then moving into lighting,
-          materials, and more creative shader development.
-        </p>
-        <p>
-          One challenge I am finding is that it is rather difficult to build a
-          detailed curriculum and schedule before I have enough familiarity with
-          the material to really judge what can realistically be accomplished
-          within a single semester. I will try to lay out as best as possible a
-          path to a realistic goal, but it may prove to be a bit of a moving
-          target.
-        </p>
-        <p>
-          Looking ahead to next week, I need to finalize the project scope,
-          establish a rough roadmap, and start working through the introductory
-          OpenGL material. I really want to avoid simply consuming tutorials and
-          actually build small tangible graphics projects as early as possible.
-        </p>
-      </article>
-      <hr />
-      <article>
-        <h2>Week 03</h2>
+          <h1>Learning graphics from the inside out.</h1>
 
-        <p>2026-06-04</p>
+          <p class="lede">
+            Weekly notes documenting my progression through OpenGL, C++, GLSL,
+            the graphics pipeline, shaders, transformations, cameras, lighting,
+            and the process of building a technical graphics portfolio.
+          </p>
+        </section>
 
-        <p>
-          This past week I focused primarily on developing my project proposal
-          and trying to better understand what a semester study of OpenGL and
-          computer graphics might realistically look like. I was eager and
-          tempted to dive in immediately to some of my source material but I
-          decided to spend a little more time trying to map out and understand
-          the major concepts and what could define milestones throughout the
-          semester.
-        </p>
-        <p>
-          The most challenging aspect of ths so far has been determining how to
-          organize the curriculum around meaningful deliverables, and based on
-          the professor's feedback I've been thinking about the project as a
-          sequence of increasingly complex graphics demonstrations with each
-          milestone resulting in a visible artifact that demonstrates a specific
-          concept. I also spent a bit of time researching generally the field of
-          computer graphics and how OpenGL (as well as other graphics APIs) fit
-          into the overall ecosystem. It has become increasingly clear that of
-          the topics I initially imagined as individual milestones could
-          actually be entire courses on their own, and because of the that I am
-          trying to focus less on mastering every aspect and more on building a
-          solid foundation that can support future learning after CSPB.
-        </p>
-        <p>
-          Next week I plan to polish out the details of my roadmap and
-          deliverable demos and begin working through introductory OpenGL
-          material. The first practical hurdle will be setting up a stable
-          OpenGL dev environment and deciding which toolchain I will use,
-          configuring libraries, C++ compilers, etc.
-        </p>
-      </article>
-      <hr />
-      <article>
-        <h2>Week 04</h2>
-        <p>2026-06-11</p>
-        <p>
-          This week I focused on my first milestone in OpenGL: setting up the
-          environment. The heavy lift has been getting the basic project
-          structure in place, setting up CMake and understanding CmakeLists,
-          linking GLFW and GLAD correctly (and learning how they fit into the
-          pipeline) and getting my first C++ program to compile and run. The
-          result was getting a window to open successfully which is not as
-          trivial as expected.
-        </p>
-        <p>
-          Once the window was running I added a callback to handle resizing,
-          added some very basic keyboard input processing, then experimented
-          with simple rendering loop behavior and was able to change the
-          background color. I spent some time learning more about frame buffer
-          clearing and buffer swapping.
-        </p>
+        <div class="blog-list">
+          <article class="blog-entry">
+            <header class="blog-enetry-header">
+              <span class="blog-entry-number">Week 02</span>
+              <h2>Defining the Project</h2>
+              <p class="blog-date">May 27, 2026</p>
+            </header>
+            <p>
+              This week I mainly focused on defining the topic and scope of my
+              project. After considering several different possible directions I
+              am leaning toward a curriculum focused on OpenGL fundamentals and
+              shader programming which I feel could help direct my career path
+              towards the more technical side of computer graphics and also give
+              me a deeper understanding of the underlying concepts that power
+              many of the tools I use professionally.
+            </p>
+            <p>
+              I spent some time setting up my GitHub pages site and
+              experimenting with different themes and layouts. I want the site
+              to serve as both a development journal and a portfolio of work
+              completed throughout CSPB, so in addition to documenting weekly
+              progress, I would eventually like to create dedicated pages for
+              project showcases and links to other GitHub repositories. I am
+              considering building parts of the site directly with HTML and CSS
+              rather than relying entirely on a Jekyll theme but that is
+              certainly not a priority.
+            </p>
+            <p>
+              I picked up Computer Graphics Programming in OpenGL and spent a
+              little time reviewing other resources like LearnOpenGL and The
+              Book of Shaders. My initial thought was to focus on graphics
+              fundamentals first, understanding the rendering pipeline,
+              transformations, coordinate spaces, and shader basics, and then
+              moving into lighting, materials, and more creative shader
+              development.
+            </p>
+            <p>
+              One challenge I am finding is that it is rather difficult to build
+              a detailed curriculum and schedule before I have enough
+              familiarity with the material to really judge what can
+              realistically be accomplished within a single semester. I will try
+              to lay out as best as possible a path to a realistic goal, but it
+              may prove to be a bit of a moving target.
+            </p>
+            <p>
+              Looking ahead to next week, I need to finalize the project scope,
+              establish a rough roadmap, and start working through the
+              introductory OpenGL material. I really want to avoid simply
+              consuming tutorials and actually build small tangible graphics
+              projects as early as possible.
+            </p>
+          </article>
 
-        <p>
-          This week felt like clearing a first hurdle. It has been a while since
-          I've done anything with C++ so dusting off the cobwebs a bit.
-          Obviously not doing anything complex for a while but I now feel like I
-          have a working foundation where I can compile code, open a window,
-          initialize some OpenGL functions, and see some results. Next step will
-          be to move from simply clearing the screen to drawing my first
-          vertices and triangles diving into shaders and the actual graphics
-          pipeline. It is surreal working throughout the day on highly complex
-          3d scene files with hundreds of millions of polys and advanced
-          raytracing and global illumination, and then jumping into this project
-          and getting extremely excited about managing to draw a red triangle.
-        </p>
-      </article>
+          <article class="blog-entry">
+            <header class="blog-enetry-header">
+              <span class="blog-entry-number">Week 03</span>
+              <h2>Project Roadmap</h2>
+              <p class="blog-date">June 4, 2026</p>
+            </header>
 
-      <hr />
+            <p>
+              This past week I focused primarily on developing my project
+              proposal and trying to better understand what a semester study of
+              OpenGL and computer graphics might realistically look like. I was
+              eager and tempted to dive in immediately to some of my source
+              material but I decided to spend a little more time trying to map
+              out and understand the major concepts and what could define
+              milestones throughout the semester.
+            </p>
+            <p>
+              The most challenging aspect of ths so far has been determining how
+              to organize the curriculum around meaningful deliverables, and
+              based on the professor's feedback I've been thinking about the
+              project as a sequence of increasingly complex graphics
+              demonstrations with each milestone resulting in a visible artifact
+              that demonstrates a specific concept. I also spent a bit of time
+              researching generally the field of computer graphics and how
+              OpenGL (as well as other graphics APIs) fit into the overall
+              ecosystem. It has become increasingly clear that of the topics I
+              initially imagined as individual milestones could actually be
+              entire courses on their own, and because of the that I am trying
+              to focus less on mastering every aspect and more on building a
+              solid foundation that can support future learning after CSPB.
+            </p>
+            <p>
+              Next week I plan to polish out the details of my roadmap and
+              deliverable demos and begin working through introductory OpenGL
+              material. The first practical hurdle will be setting up a stable
+              OpenGL dev environment and deciding which toolchain I will use,
+              configuring libraries, C++ compilers, etc.
+            </p>
+          </article>
 
-      <article>
-        <h2>Week 05</h2>
-        <p>2026-06-18</p>
-        <p>
-          This week I made triangles, and seeing actual rendered geometry felt
-          like a first major milestone. I worked through the process of creating
-          vertex buffers, vertex array objects, and shader programs, and overall
-          got a better understanding of how data is sent to the GPU and
-          processed through the rendering pipeline.
-        </p>
-        <p>
-          I spent a significant amount of experimenting with variations on the
-          examples to reinforce what I've been learning. I created multiple
-          shapes using a single VAO and VBO, then did the same with separate
-          VBOs for different objects, and experimented with multiple fragment
-          shaders to better understand how different shader programs affect the
-          final image. Really trying to make sure I get beyond just following
-          instructions and exploring as much off the code as possible on my own.
-        </p>
-        <p>
-          I started diving into the introductory chapters of 'the Book of
-          Shaders' to get a head start on my next milestone. So far it has
-          provided a very different perspective than LearnOpenGL, with more
-          emphasis on the mathematical and creative side of shader development
-          rather than the mechanics openGL.
-        </p>
-        <p>
-          I decided to rebuild my project portfolio website from scratch using
-          plain HTML instead of continuing with the template I had originally
-          set up, but I'm second guessing my decision now. I thought it might
-          afford me a little more flexibility in design and that I could
-          intentionally forego CSS and visual styling, focusing on building the
-          site's structure and content first. But after seeing so many other
-          great website example of my classmates, it might be better to have
-          something more visually appealing with the ease of a template rather
-          than trying to tackle front end design on top of my openGL project.
-        </p>
-        <p>
-          One challenge I encountered this week is that OpenGL is already
-          becoming progressively more complex with each chapter, and the
-          learning curve may start getting pretty steep. I have had to devote
-          some extra time this week to studying for my Intro to AI midterm, so
-          hopefully the extra work I put in last week will help me keep up with
-          the curriculum. For next week I plan to continue focusing on shaders,
-          both through LearnOpenGL and The Book of Shaders.
-        </p>
-      </article>
-      <hr />
-      <article>
-        <h2>Week 06</h2>
-        <p>2026-06-25</p>
-        <p>
-          This past week I focused on OpenGL shaders and started digging into
-          how data flows through the graphics pipeline. I learned how vertex
-          data is laid out in memory and how glVertexAttribPointer describes the
-          layout to the vertex shader, dealing with interleaved vertex data,
-          stride offsets and attribute locations. On the shader side I worked
-          with both vertex attributes to pass color information through the
-          vertex shader to the fragment shader, and also worked with uniforms to
-          pass time values into the GPU. I then used sine functions to animate
-          vertex positions, color values and alpha over time. I messed around
-          with different color values to see how the rasterizer smoothly
-          interpolates values between verts.
-        </p>
-        <p>
-          One of the biggest improvements this week was reorganizing the project
-          structure. I separated shader source into external GLSL files and
-          created a C++ shader class to help with compilation and linking which
-          helped clean up the codebase.
-        </p>
-        <p>
-          Looking ahead, I’ve decided to skip texturing for now. Even though UV
-          mapping and texturing are obviously important, I feel like my primary
-          goal for the project is understanding the graphics pipeline and I’d
-          rather continue into transformations, coordinate systems, cameras, and
-          lighting. I can track back to textures and UVs after that.
-        </p>
-        <p>
-          The biggest hurdle right now is that transformations look like a
-          significant jump in complexity. Matrix math and multiple coordinate
-          spaces are considerably more abstract than what I’ve done so far and
-          are pretty daunting so I’m planning on spending extra time making sure
-          I really understand the concepts.
-        </p>
-        <p>
-          Outside of the graphics work I also need to spend time improving my
-          website. I think I had misunderstood last week’s expectations and
-          though the assignment was to establish the framework for the site and
-          continue to develop it throughout the semester. I haven’t had enough
-          time to finish that yet, so improving the site will be another
-          priority over the next week.
-        </p>
-        <p>
-          Another challenge I’m still thinking through is how to best document
-          and present my work. So far I’ve been saving screenshots and short MP4
-          recordings of each step, which I suppose will ultimately become the
-          artifacts for the portfolio. As the project grows I need to figure out
-          how to organize the demos into a sort of narrative that shows the
-          technical progress over time.
-        </p>
-      </article>
-      <hr />
-      <article>
-        <h2>Week 07 - Mid-Semester Project Update</h2>
-        <p>2026-07-02</p>
-        <br />
-        <h3>Project Overview</h3>
-        <p>
-          My project focuses on learning the fundamentals of modern computer
-          graphics through OpenGL and C++. Rather than using a game engine such
-          as Unity or Unreal Engine, I wanted to better understand the graphics
-          pipeline by working directly with OpenGL. My original goals were to
-          learn shader programming, become comfortable with the rendering
-          pipeline, and become more comfortable coding and compiling, and
-          building reusable utilities in C++ utilities.
-        </p>
-        <p>
-          As I have progressed through the first half of the project my goals
-          have shifted only slightly. Instead of moving quickly through
-          tutorials, I have spent more time building a clean, reusable project
-          structure and strengthening my understanding of core concepts before
-          moving on to more advanced topics. I also decided to postpone textures
-          so I could focus on transformations, cameras, and eventually lighting,
-          which are more closely aligned with my long-term interests in graphics
-          programming and technical art.
-        </p>
-        <h3>Accomplishments</h3>
-        <p>
-          So far I have successfully built a modern OpenGL development
-          environment using CMake, GLFW, GLAD, and Visual Studio. I have
-          implemented rendering examples using vertex buffers, vertex arrays,
-          element buffers, multiple shaders, and indexed drawing while gaining a
-          much better understanding of how data flows through the graphics
-          pipeline.
-        </p>
-        <p>
-          One of the most valuable parts of the project has been learning GLSL
-          shader programming. I have implemented vertex and fragment shaders,
-          worked with vertex attributes and uniforms, and created animated
-          effects driven by time-based calculations and mouse cursor position. I
-          also created a reusable Shader class, and have so far restructured the
-          organization of my C++ project a couple different times into something
-          more maintainable and scalable, with shared utilities and CMake helper
-          functions.
-        </p>
-        <h3>Reflection and Remaining Goals</h3>
-        <p>
-          Overall, I feel that the project is progressing well and remains
-          aligned with my original objectives. I feel like I am developing a
-          much stronger understanding of the graphics pipeline than I did at the
-          beginning of the semester.
-        </p>
-        <p>
-          During the remainder of the semester, I plan to continue building on
-          this foundation by implementing camera systems, exploring coordinate
-          spaces in more depth, and introducing basic lighting techniques. I
-          also plan to continue improving my portfolio website by organizing
-          project artifacts into polished demonstrations that showcase both the
-          technical implementation and the concepts I have learned.
-        </p>
-      </article>
-      <hr />
-      <article>
-        <h2>Week 08</h2>
-        <p>2026-07-09</p>
-        <p>
-          This week I ended up bouncing back and forth between textures and
-          shaders and view transformations. I went back and spent some more time
-          on UVs, experimented with blending textures with vertex colors, then
-          blended two textures together in the fragment shader using a mix
-          factor. As a small interactive exercise I hooked up keyboard input so
-          the up and down arrow keys adjust texture opacity in real time.
-        </p>
-        <p>
-          On the transformations side I implemented model, view and perspective
-          transformations, and everything finally looks like actual 3D instead
-          of squares and triangles on a flat screen. I still need to finish this
-          section by adding movement and camera controls so I can start
-          navigating around the scene.
-        </p>
-        <p>
-          I continued to spend a fair amount of time cleaning up the project
-          structure. As I collect more and more different shaders for different
-          effects, and as code gets longer and longer I need to make sure
-          everything is organized effectively and start leveraging reusable code
-          and utility classes and assets. I cleaned up the CMake project so
-          adding new demos is much easier.
-        </p>
-        <p>
-          I like the flow of LearnOpenGL and I've noticed that topics sort of
-          circle back around after learning something new. Pieces are starting
-          to feel like they're falling into place, rather than just a bunch of
-          isolated openGL functions. I really enjoy how each new topic builds on
-          the last, and that I can keep reusing code from previous exercises and
-          just add new functionality instead of starting over every week. It's
-          nice having shaders separated from the application code so I can write
-          and link a completely different pair of vertex and fragment shaders
-          and get an entirely different visual result without having to change
-          much of the C++ code.
-        </p>
-      </article>
-      <hr />
-      <article>
-        <h2>Week 09</h2>
-        <p>2026-07-16</p>
-        <p>
-          This week I finished up the 'basics' of OpenGL. I worked more with
-          transformation matrices and now finally have model, view and
-          perspective transformations working together. I added a moveable
-          camera with keyboard and mouse controls, moved the camera into it's
-          own separate class, and now the scenes and demos are feeling much more
-          interactive and actually 3d instead of just displaying a triangle or
-          square from a fixed viewpoint.
-        </p>
-        <p>
-          I added a sphere mesh alongside the cube geometry I was already using
-          and started rendering multiple objects in the same scene. I also
-          experimented with randomizing their positions, scale, rotation, and
-          movement. I'd like to start separating out the geometry into their own
-          mesh classes as well so I have reusable primitives I can implement
-          instead of arrays of vertices.
-        </p>
-        <p>
-          One of the main hurdles was keeping track of which transformations
-          should happen in local space versus world space. Small changes to the
-          order of translation, rotation and scaling can create very different
-          results, and I spend some time debugging objects that weren't
-          displaying as I anticipated. The camera controls also took quite a bit
-          of adjustment getting the mouse input, pitch limits and frame timing
-          to feel right. The math involved with camera angles and perspective
-          transformations is really tough for me to get my head around but
-          luckily most of that is abstracted away and taken care of.
-        </p>
-        <p>
-          Next up: Lighting and Materials. I want to begin with Phong shaders
-          with ambient, diffuse and specular lighting, then adding surface
-          normals, diving into more complex material properties, and light
-          sources that can move through the scene. From there I should be able
-          to combine the textures, camera controls, xforms, and start putting
-          out some more complex and visually interesting
-        </p>
-      </article>
-      <hr />
-      <aritcle>
-        <h2>Week 10</h2>
-        <p>2026-07-23</p>
-      </aritcle>
+          <article class="blog-entry">
+            <header class="blog-enetry-header">
+              <span class="blog-entry-number">Week 4</span>
+              <h2>Setting Up the OpenGL Environment</h2>
+              <p class="blog-date">June 11, 2026</p>
+            </header>
+            <p>
+              This week I focused on my first milestone in OpenGL: setting up
+              the environment. The heavy lift has been getting the basic project
+              structure in place, setting up CMake and understanding CmakeLists,
+              linking GLFW and GLAD correctly (and learning how they fit into
+              the pipeline) and getting my first C++ program to compile and run.
+              The result was getting a window to open successfully which is not
+              as trivial as expected.
+            </p>
+            <p>
+              Once the window was running I added a callback to handle resizing,
+              added some very basic keyboard input processing, then experimented
+              with simple rendering loop behavior and was able to change the
+              background color. I spent some time learning more about frame
+              buffer clearing and buffer swapping.
+            </p>
 
+            <p>
+              This week felt like clearing a first hurdle. It has been a while
+              since I've done anything with C++ so dusting off the cobwebs a
+              bit. Obviously not doing anything complex for a while but I now
+              feel like I have a working foundation where I can compile code,
+              open a window, initialize some OpenGL functions, and see some
+              results. Next step will be to move from simply clearing the screen
+              to drawing my first vertices and triangles diving into shaders and
+              the actual graphics pipeline. It is surreal working throughout the
+              day on highly complex 3d scene files with hundreds of millions of
+              polys and advanced raytracing and global illumination, and then
+              jumping into this project and getting extremely excited about
+              managing to draw a red triangle.
+            </p>
+          </article>
+
+          <article class="blog-entry">
+            <header class="blog-enetry-header">
+              <span class="blog-entry-number">Week 5</span>
+              <h2>The First Triangle</h2>
+              <p class="blog-date">June 18, 2026</p>
+            </header>
+
+            <p>
+              This week I made triangles, and seeing actual rendered geometry
+              felt like a first major milestone. I worked through the process of
+              creating vertex buffers, vertex array objects, and shader
+              programs, and overall got a better understanding of how data is
+              sent to the GPU and processed through the rendering pipeline.
+            </p>
+            <p>
+              I spent a significant amount of experimenting with variations on
+              the examples to reinforce what I've been learning. I created
+              multiple shapes using a single VAO and VBO, then did the same with
+              separate VBOs for different objects, and experimented with
+              multiple fragment shaders to better understand how different
+              shader programs affect the final image. Really trying to make sure
+              I get beyond just following instructions and exploring as much off
+              the code as possible on my own.
+            </p>
+            <p>
+              I started diving into the introductory chapters of 'the Book of
+              Shaders' to get a head start on my next milestone. So far it has
+              provided a very different perspective than LearnOpenGL, with more
+              emphasis on the mathematical and creative side of shader
+              development rather than the mechanics openGL.
+            </p>
+            <p>
+              I decided to rebuild my project portfolio website from scratch
+              using plain HTML instead of continuing with the template I had
+              originally set up, but I'm second guessing my decision now. I
+              thought it might afford me a little more flexibility in design and
+              that I could intentionally forego CSS and visual styling, focusing
+              on building the site's structure and content first. But after
+              seeing so many other great website example of my classmates, it
+              might be better to have something more visually appealing with the
+              ease of a template rather than trying to tackle front end design
+              on top of my openGL project.
+            </p>
+            <p>
+              One challenge I encountered this week is that OpenGL is already
+              becoming progressively more complex with each chapter, and the
+              learning curve may start getting pretty steep. I have had to
+              devote some extra time this week to studying for my Intro to AI
+              midterm, so hopefully the extra work I put in last week will help
+              me keep up with the curriculum. For next week I plan to continue
+              focusing on shaders, both through LearnOpenGL and The Book of
+              Shaders.
+            </p>
+          </article>
+
+          <article class="blog-entry">
+            <header class="blog-enetry-header">
+              <span class="blog-entry-number">Week 6</span>
+              <h2>Shaders and the Graphics Pipeline</h2>
+              <p class="blog-date">June 25, 2026</p>
+            </header>
+
+            <p>
+              This past week I focused on OpenGL shaders and started digging
+              into how data flows through the graphics pipeline. I learned how
+              vertex data is laid out in memory and how glVertexAttribPointer
+              describes the layout to the vertex shader, dealing with
+              interleaved vertex data, stride offsets and attribute locations.
+              On the shader side I worked with both vertex attributes to pass
+              color information through the vertex shader to the fragment
+              shader, and also worked with uniforms to pass time values into the
+              GPU. I then used sine functions to animate vertex positions, color
+              values and alpha over time. I messed around with different color
+              values to see how the rasterizer smoothly interpolates values
+              between verts.
+            </p>
+            <p>
+              One of the biggest improvements this week was reorganizing the
+              project structure. I separated shader source into external GLSL
+              files and created a C++ shader class to help with compilation and
+              linking which helped clean up the codebase.
+            </p>
+            <p>
+              Looking ahead, I’ve decided to skip texturing for now. Even though
+              UV mapping and texturing are obviously important, I feel like my
+              primary goal for the project is understanding the graphics
+              pipeline and I’d rather continue into transformations, coordinate
+              systems, cameras, and lighting. I can track back to textures and
+              UVs after that.
+            </p>
+            <p>
+              The biggest hurdle right now is that transformations look like a
+              significant jump in complexity. Matrix math and multiple
+              coordinate spaces are considerably more abstract than what I’ve
+              done so far and are pretty daunting so I’m planning on spending
+              extra time making sure I really understand the concepts.
+            </p>
+            <p>
+              Outside of the graphics work I also need to spend time improving
+              my website. I think I had misunderstood last week’s expectations
+              and though the assignment was to establish the framework for the
+              site and continue to develop it throughout the semester. I haven’t
+              had enough time to finish that yet, so improving the site will be
+              another priority over the next week.
+            </p>
+            <p>
+              Another challenge I’m still thinking through is how to best
+              document and present my work. So far I’ve been saving screenshots
+              and short MP4 recordings of each step, which I suppose will
+              ultimately become the artifacts for the portfolio. As the project
+              grows I need to figure out how to organize the demos into a sort
+              of narrative that shows the technical progress over time.
+            </p>
+          </article>
+
+          <article class="blog-entry">
+            <header class="blog-enetry-header">
+              <span class="blog-entry-number">Week 7</span>
+              <h2>Mid-Semester Project Update</h2>
+              <p class="blog-date">July 2, 2026</p>
+            </header>
+
+            <h3>Project Overview</h3>
+            <p>
+              My project focuses on learning the fundamentals of modern computer
+              graphics through OpenGL and C++. Rather than using a game engine
+              such as Unity or Unreal Engine, I wanted to better understand the
+              graphics pipeline by working directly with OpenGL. My original
+              goals were to learn shader programming, become comfortable with
+              the rendering pipeline, and become more comfortable coding and
+              compiling, and building reusable utilities in C++ utilities.
+            </p>
+            <p>
+              As I have progressed through the first half of the project my
+              goals have shifted only slightly. Instead of moving quickly
+              through tutorials, I have spent more time building a clean,
+              reusable project structure and strengthening my understanding of
+              core concepts before moving on to more advanced topics. I also
+              decided to postpone textures so I could focus on transformations,
+              cameras, and eventually lighting, which are more closely aligned
+              with my long-term interests in graphics programming and technical
+              art.
+            </p>
+            <h3>Accomplishments</h3>
+            <p>
+              So far I have successfully built a modern OpenGL development
+              environment using CMake, GLFW, GLAD, and Visual Studio. I have
+              implemented rendering examples using vertex buffers, vertex
+              arrays, element buffers, multiple shaders, and indexed drawing
+              while gaining a much better understanding of how data flows
+              through the graphics pipeline.
+            </p>
+            <p>
+              One of the most valuable parts of the project has been learning
+              GLSL shader programming. I have implemented vertex and fragment
+              shaders, worked with vertex attributes and uniforms, and created
+              animated effects driven by time-based calculations and mouse
+              cursor position. I also created a reusable Shader class, and have
+              so far restructured the organization of my C++ project a couple
+              different times into something more maintainable and scalable,
+              with shared utilities and CMake helper functions.
+            </p>
+            <h3>Reflection and Remaining Goals</h3>
+            <p>
+              Overall, I feel that the project is progressing well and remains
+              aligned with my original objectives. I feel like I am developing a
+              much stronger understanding of the graphics pipeline than I did at
+              the beginning of the semester.
+            </p>
+            <p>
+              During the remainder of the semester, I plan to continue building
+              on this foundation by implementing camera systems, exploring
+              coordinate spaces in more depth, and introducing basic lighting
+              techniques. I also plan to continue improving my portfolio website
+              by organizing project artifacts into polished demonstrations that
+              showcase both the technical implementation and the concepts I have
+              learned.
+            </p>
+          </article>
+
+          <article class="blog-entry">
+            <header class="blog-enetry-header">
+              <span class="blog-entry-number">Week 8</span>
+              <h2>Textures and Transformations</h2>
+              <p class="blog-date">July 9, 2026</p>
+            </header>
+
+            <p>
+              This week I ended up bouncing back and forth between textures and
+              shaders and view transformations. I went back and spent some more
+              time on UVs, experimented with blending textures with vertex
+              colors, then blended two textures together in the fragment shader
+              using a mix factor. As a small interactive exercise I hooked up
+              keyboard input so the up and down arrow keys adjust texture
+              opacity in real time.
+            </p>
+            <p>
+              On the transformations side I implemented model, view and
+              perspective transformations, and everything finally looks like
+              actual 3D instead of squares and triangles on a flat screen. I
+              still need to finish this section by adding movement and camera
+              controls so I can start navigating around the scene.
+            </p>
+            <p>
+              I continued to spend a fair amount of time cleaning up the project
+              structure. As I collect more and more different shaders for
+              different effects, and as code gets longer and longer I need to
+              make sure everything is organized effectively and start leveraging
+              reusable code and utility classes and assets. I cleaned up the
+              CMake project so adding new demos is much easier.
+            </p>
+            <p>
+              I like the flow of LearnOpenGL and I've noticed that topics sort
+              of circle back around after learning something new. Pieces are
+              starting to feel like they're falling into place, rather than just
+              a bunch of isolated openGL functions. I really enjoy how each new
+              topic builds on the last, and that I can keep reusing code from
+              previous exercises and just add new functionality instead of
+              starting over every week. It's nice having shaders separated from
+              the application code so I can write and link a completely
+              different pair of vertex and fragment shaders and get an entirely
+              different visual result without having to change much of the C++
+              code.
+            </p>
+          </article>
+
+          <article class="blog-entry">
+            <header class="blog-enetry-header">
+              <span class="blog-entry-number">Week 9</span>
+              <h2>Three Dimensions</h2>
+              <p class="blog-date">July 16, 2026</p>
+            </header>
+
+            <p>
+              This week I finished up the 'basics' of OpenGL. I worked more with
+              transformation matrices and now finally have model, view and
+              perspective transformations working together. I added a moveable
+              camera with keyboard and mouse controls, moved the camera into
+              it's own separate class, and now the scenes and demos are feeling
+              much more interactive and actually 3d instead of just displaying a
+              triangle or square from a fixed viewpoint.
+            </p>
+            <p>
+              I added a sphere mesh alongside the cube geometry I was already
+              using and started rendering multiple objects in the same scene. I
+              also experimented with randomizing their positions, scale,
+              rotation, and movement. I'd like to start separating out the
+              geometry into their own mesh classes as well so I have reusable
+              primitives I can implement instead of arrays of vertices.
+            </p>
+            <p>
+              One of the main hurdles was keeping track of which transformations
+              should happen in local space versus world space. Small changes to
+              the order of translation, rotation and scaling can create very
+              different results, and I spend some time debugging objects that
+              weren't displaying as I anticipated. The camera controls also took
+              quite a bit of adjustment getting the mouse input, pitch limits
+              and frame timing to feel right. The math involved with camera
+              angles and perspective transformations is really tough for me to
+              get my head around but luckily most of that is abstracted away and
+              taken care of.
+            </p>
+            <p>
+              Next up: Lighting and Materials. I want to begin with Phong
+              shaders with ambient, diffuse and specular lighting, then adding
+              surface normals, diving into more complex material properties, and
+              light sources that can move through the scene. From there I should
+              be able to combine the textures, camera controls, xforms, and
+              start putting out some more complex and visually interesting
+            </p>
+          </article>
+
+          <article class="blog-entry">
+            <header class="blog-enetry-header">
+              <span class="blog-entry-number">Week 10</span>
+              <h2>Title</h2>
+              <p class="blog-date">July 23, 2026</p>
+            </header>
+          </article>
+
+          <article class="blog-entry">
+            <header class="blog-enetry-header">
+              <span class="blog-entry-number">Week 11</span>
+              <h2>Title</h2>
+              <p class="blog-date">July 30, 2026</p>
+            </header>
+          </article>
+
+          <article class="blog-entry">
+            <header class="blog-enetry-header">
+              <span class="blog-entry-number">Week 12</span>
+              <h2>Title</h2>
+              <p class="blog-date">August 7, 2026</p>
+            </header>
+          </article>
+        </div>
+      </main>
+
+      <footer>
+        <p>© 2026 Mitchell Avery</p>
+      </footer>
     </div>
   </body>
 </html>
