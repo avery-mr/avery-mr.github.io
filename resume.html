@@ -3,131 +3,271 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Technical resume for Mitchell Avery, computer science student and technical artist focused on graphics programming, real-time rendering, automation, and visualization."
+    />
+
     <link rel="stylesheet" href="css/styles.css" />
-    <title>Resume</title>
+
+    <title>Resume | Mitchell Avery</title>
   </head>
 
   <body>
     <div class="container">
-      <header>
-        <h1>Resume</h1>
-        <nav>
+
+      <header class="site-header">
+        <a class="site-name" href="index.html">Mitchell Avery</a>
+
+        <nav aria-label="Main navigation">
           <a href="index.html">Home</a>
           <a href="projects.html">Projects</a>
           <a href="blog.html">Blog</a>
-          <a href="resume.html">Resume</a>
+          <a class="active" href="resume.html">Resume</a>
           <a href="contact.html">Contact</a>
         </nav>
       </header>
 
-      <hr />
 
-      <section>
-        <h2>Download Resume</h2>
-        <p>
-          <a href="assets/MitchellAvery_CV_060726.pdf" target="_blank">
-            Download PDF Resume
-          </a>
-        </p>
-      </section>
+      <main>
 
-      <section>
-        <h2>Technical Summary</h2>
-        <p>
-          I am a technical artist and computer science student focused on
-          graphics programming, real-time rendering, automation, and production
-          pipeline development. My background combines 3D visualization,
-          software development, shader programming, and tool-building for
-          creative technical workflows.
-        </p>
-      </section>
+        <section class="resume-intro">
 
-      <section>
-        <h2>Computer Science & Programming Skills</h2>
+          <div>
+            <p class="eyebrow">Technical Profile</p>
 
-        <h3>Languages</h3>
-        <ul>
-          <li>C++</li>
-          <li>Python</li>
-          <li>MaxScript</li>
-          <li>HTML / CSS</li>
-        </ul>
+            <h1>Resume</h1>
 
-        <h3>Graphics Programming</h3>
-        <ul>
-          <li>OpenGL fundamentals</li>
-          <li>GLFW / GLAD</li>
-          <li>Shader programming</li>
-          <li>Vertex buffers, vertex arrays, and indexed drawing</li>
-          <li>Uniforms, transformations, and real-time rendering concepts</li>
-        </ul>
+            <p class="lede">
+              Technical artist and computer science student focused on
+              graphics programming, real-time rendering, automation,
+              and production pipeline development.
+            </p>
+          </div>
 
-        <h3>Software & Development Tools</h3>
-        <ul>
-          <li>Git and GitHub</li>
-          <li>CMake</li>
-          <li>Visual Studio / VS Code</li>
-          <li>Command line development with PowerShell and Linux/WSL</li>
-        </ul>
+          <aside class="resume-actions">
+            <span class="section-label">PDF Version</span>
 
-        <h3>Automation & Pipeline Development</h3>
-        <ul>
-          <li>Python scripting for workflow automation</li>
-          <li>MAXScript tools for production tasks</li>
-          <li>Reusable asset library development</li>
-          <li>Technical documentation and process improvement</li>
-        </ul>
-      </section>
+            <p>
+              A formatted copy of my complete resume is available as a PDF.
+            </p>
 
-      <section>
-        <h2>Relevant Technical Highlights</h2>
-        <ul>
-          <li>
-            Currently completing a B.S. in Computer Science with focus areas in
-            graphics programming, automation, and real-time rendering.
-          </li>
-          <li>
-            Developed Python and MAXScript tools to automate repetitive
-            production workflows.
-          </li>
-          <li>
-            Built reusable asset libraries and standardized production
-            techniques for scalable visualization pipelines.
-          </li>
-          <li>
-            Introduced and supported real-time Unreal Engine workflows in
-            production visualization environments.
-          </li>
-          <li>
-            Researching OpenGL, shader programming, graphics pipelines, and
-            technical artist workflows.
-          </li>
-        </ul>
-      </section>
+            <a
+              class="button"
+              href="assets/MitchellAvery_CV_060726.pdf"
+              target="_blank"
+              rel="noopener"
+            >
+              Download Resume
+            </a>
+          </aside>
 
-      <section>
-        <h2>Education</h2>
-        <ul>
-          <li>
-            <strong>B.S. Computer Science</strong> — University of Colorado
-            Boulder, expected 2026
-          </li>
-          <li>
-            <strong>B.F.A. Film, Minor in Italian</strong> — University of
-            Colorado Boulder
-          </li>
-        </ul>
-      </section>
+        </section>
 
-      <section>
-        <h2>Selected 3D & Visualization Experience</h2>
-        <p>
-          My professional background includes 15+ years creating production-ready
-          3D assets, animations, real-time visualizations, and presentation
-          content using tools such as Unreal Engine, 3ds Max, Maya, V-Ray,
-          Adobe Creative Suite, and AI-assisted workflows.
-        </p>
-      </section>
+
+        <section class="resume-section">
+
+          <p class="resume-section-title">01 / Profile</p>
+
+          <div class="resume-content">
+
+            <h2>Technical Summary</h2>
+
+            <p>
+              I am a technical artist and computer science student focused on
+              graphics programming, real-time rendering, automation, and
+              production pipeline development.
+            </p>
+
+            <p>
+              My background combines 3D visualization, software development,
+              shader programming, and tool-building for creative technical
+              workflows.
+            </p>
+
+          </div>
+
+        </section>
+
+
+        <section class="resume-section">
+
+          <p class="resume-section-title">02 / Skills</p>
+
+          <div class="resume-content">
+
+            <h2>Computer Science & Programming</h2>
+
+
+            <div class="skill-group">
+
+              <h3>Languages</h3>
+
+              <ul class="skill-list">
+                <li>C++</li>
+                <li>Python</li>
+                <li>MAXScript</li>
+                <li>HTML / CSS</li>
+              </ul>
+
+            </div>
+
+
+            <div class="skill-group">
+
+              <h3>Graphics Programming</h3>
+
+              <ul class="skill-list">
+                <li>OpenGL</li>
+                <li>GLFW / GLAD</li>
+                <li>GLSL</li>
+                <li>Shader Programming</li>
+                <li>Vertex Buffers</li>
+                <li>Vertex Arrays</li>
+                <li>Indexed Drawing</li>
+                <li>Transformations</li>
+                <li>Real-Time Rendering</li>
+              </ul>
+
+            </div>
+
+
+            <div class="skill-group">
+
+              <h3>Development Tools</h3>
+
+              <ul class="skill-list">
+                <li>Git</li>
+                <li>GitHub</li>
+                <li>CMake</li>
+                <li>Visual Studio</li>
+                <li>VS Code</li>
+                <li>PowerShell</li>
+                <li>Linux / WSL</li>
+              </ul>
+
+            </div>
+
+
+            <div class="skill-group">
+
+              <h3>Automation & Pipeline Development</h3>
+
+              <ul class="skill-list">
+                <li>Python Automation</li>
+                <li>MAXScript Tools</li>
+                <li>Asset Libraries</li>
+                <li>Pipeline Development</li>
+                <li>Technical Documentation</li>
+              </ul>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <section class="resume-section">
+
+          <p class="resume-section-title">03 / Highlights</p>
+
+          <div class="resume-content">
+
+            <h2>Technical Highlights</h2>
+
+            <ul>
+              <li>
+                Currently completing a B.S. in Computer Science with focus
+                areas in graphics programming, automation, and real-time
+                rendering.
+              </li>
+
+              <li>
+                Developed Python and MAXScript tools to automate repetitive
+                production workflows.
+              </li>
+
+              <li>
+                Built reusable asset libraries and standardized production
+                techniques for scalable visualization pipelines.
+              </li>
+
+              <li>
+                Introduced and supported real-time Unreal Engine workflows
+                in production visualization environments.
+              </li>
+
+              <li>
+                Researching OpenGL, shader programming, graphics pipelines,
+                and technical artist workflows.
+              </li>
+            </ul>
+
+          </div>
+
+        </section>
+
+
+        <section class="resume-section">
+
+          <p class="resume-section-title">04 / Education</p>
+
+          <div class="resume-content">
+
+            <h2>Education</h2>
+
+            <h3>University of Colorado Boulder</h3>
+
+            <p>
+              <strong>B.S. Computer Science</strong><br />
+              Expected 2026
+            </p>
+
+            <h3>University of Colorado Boulder</h3>
+
+            <p>
+              <strong>B.F.A. Film</strong><br />
+              Minor in Italian
+            </p>
+
+          </div>
+
+        </section>
+
+
+        <section class="resume-section">
+
+          <p class="resume-section-title">05 / Experience</p>
+
+          <div class="resume-content">
+
+            <h2>3D & Visualization</h2>
+
+            <p>
+              My professional background includes 15+ years creating
+              production-ready 3D assets, animations, real-time
+              visualizations, and presentation content.
+            </p>
+
+            <p>
+              My production experience includes tools and workflows built
+              around Unreal Engine, 3ds Max, Maya, V-Ray, Adobe Creative
+              Suite, and AI-assisted content creation.
+            </p>
+
+          </div>
+
+        </section>
+
+      </main>
+
+
+      <footer>
+        <p>© 2026 Mitchell Avery</p>
+      </footer>
+
     </div>
   </body>
 </html>
