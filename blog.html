@@ -448,25 +448,120 @@
           <article class="blog-entry">
             <header class="blog-enetry-header">
               <span class="blog-entry-number">Week 10</span>
-              <h2>Title</h2>
+              <h2>Let Me See That Phong</h2>
               <p class="blog-date">July 23, 2026</p>
             </header>
+            <p>
+              week I focused on setting up basic Phong lighting, which made me a
+              little nostalgic for the days I first started learning 3d modeling
+              25 years ago. I worked through the ambient, diffuse, and specular
+              lighting components and got a much better understanding of how
+              they each contribute to the final look and how they interact with
+              surface normals and camera position.
+            </p>
+            <p>
+              I created a scene with a large cube as the primary object and a
+              second smaller cube to represent the light source. The light cube
+              has its own simple shader while the main object uses a separate
+              lighting shader. To make the scene a bit more dynamic I made the
+              light cube orbit the larger cube so I could see how the lighting
+              changed in real time as the light position moved.
+            </p>
+            <p>
+              I worked with the lighting calculations in both world space and
+              view-space to better understand the differences between the two
+              approaches; neat to compare the math side by side and see that,
+              while the end result is similar, the coordinate system changes how
+              the calculations are performed. I spent some time experimenting
+              with different light colors, object colors, specular strengths,
+              shininess values, and other parameters to get a feel for how they
+              affect the final look. Adding even a very simple lighting setup
+              made the scene so much more visually interesting, and a few
+              material attributes and tuning the lighting parameters makes the
+              plain cube feel much more like a 3d object rather than colored
+              shapes.
+            </p>
+            <p>
+              Next week I'll dive further into materials, probably look to
+              create a dedicated material class or struct to organize the
+              material properties more cleanly. I also plan to implement
+              multiple light sources and distributions. Outside of the coding
+              work, I also need to start organizing a better presentation of the
+              project for my website, I've accumulated quite a few demos,
+              screenshots, videos and code snippets over the semester and no I
+              need to think about how to present them in a way that clearly
+              shows the progression of the project and the concepts I've
+              learned.
+            </p>
           </article>
 
           <article class="blog-entry">
             <header class="blog-enetry-header">
               <span class="blog-entry-number">Week 11</span>
-              <h2>Title</h2>
+              <h2>Maintaining Motivation</h2>
               <p class="blog-date">July 30, 2026</p>
             </header>
+            <p>
+              Did not make as much progress as I had hoped this week, between
+              work, AI midterm and final project, so OpenGL had to take a bit of
+              a back seat. I found myself struggling to keep the momentum going
+              with graduation approaching so rapidly, so I'm looking for a bit
+              of motivation.
+            </p>
+            <p>
+              I worked on materials and started cleaning up the way data is
+              organized in the shaders. Pretty simple changes but rather than
+              passing a collection of individual uniforms, I created material
+              and lighting structs and sent those to the shader from the app. No
+              drastic changes visually but it feels more scalable and should
+              make future lighting work much easier.
+            </p>
+            <p>
+              My original plan was to start experimenting with different
+              lighting models. I am hoping to get into that this coming week
+              instead, but I also really really need to start organizing my
+              final project presentation.
+            </p>
           </article>
 
           <article class="blog-entry">
             <header class="blog-enetry-header">
               <span class="blog-entry-number">Week 12</span>
-              <h2>Title</h2>
+              <h2>Wrapping Up</h2>
               <p class="blog-date">August 7, 2026</p>
             </header>
+            <p>
+              This week I explored more advanced lighting types which I had
+              hoped to finish up last week. We're expanding beyond Phong
+              lighting setups into directional lights, point lights and
+              spotlights. Each type introduced some new concepts, particularly
+              calculating distance-based attenuation for point and spot lights,
+              and using inner and outer cone angles to create a smooth falloff
+              around the edges of a spotlight.
+            </p>
+            <p>
+              I also started experimenting with combining multiple lights in a
+              scene. I went back and watched some of the first clips I rendered
+              of this project and it is really amazing how much more advanced
+              lighting and shaders and textures profoundly affect the quality of
+              the rendered image. Alongside that I started looking int Assimp
+              for importing more interesting meshes rather than relying entirely
+              on my simple cube or procedurally created geometry.
+            </p>
+            <p>
+              I've been updating my project website and making sure I have
+              screenshots and recordings that document important milestones
+              along the way. A significant amount of my time this past week has
+              also gone toward finishing my reinforcement learning project. As
+              that project wraps up a I should have more time to return my
+              attention to OpenGL. Although I certainly plan to continue this
+              learning path, there are still several topics I would like to
+              explore briefly before the semester ends. I would like to spend
+              some time investigating a few techniques beyond the basic
+              LearnOpenGL progression so that the final project demonstrates not
+              only what I have learned but also points toward the graphics and
+              shader topics I would like to continue exploring in the future.
+            </p>
           </article>
         </div>
       </main>
@@ -477,3 +572,40 @@
     </div>
   </body>
 </html>
+
+<p>
+  week I focused on setting up basic Phong lighting, which made me a little
+  nostalgic for the days I first started learning 3d modeling 25 years ago. I
+  worked through the ambient, diffuse, and specular lighting components and got
+  a much better understanding of how they each contribute to the final look and
+  how they interact with surface normals and camera position.
+</p>
+<p>
+  I created a scene with a large cube as the primary object and a second smaller
+  cube to represent the light source. The light cube has its own simple shader
+  while the main object uses a separate lighting shader. To make the scene a bit
+  more dynamic I made the light cube orbit the larger cube so I could see how
+  the lighting changed in real time as the light position moved.
+</p>
+<p>
+  I worked with the lighting calculations in both world space and view-space to
+  better understand the differences between the two approaches; neat to compare
+  the math side by side and see that, while the end result is similar, the
+  coordinate system changes how the calculations are performed. I spent some
+  time experimenting with different light colors, object colors, specular
+  strengths, shininess values, and other parameters to get a feel for how they
+  affect the final look. Adding even a very simple lighting setup made the scene
+  so much more visually interesting, and a few material attributes and tuning
+  the lighting parameters makes the plain cube feel much more like a 3d object
+  rather than colored shapes.
+</p>
+<p>
+  Next week I'll dive further into materials, probably look to create a
+  dedicated material class or struct to organize the material properties more
+  cleanly. I also plan to implement multiple light sources and distributions.
+  Outside of the coding work, I also need to start organizing a better
+  presentation of the project for my website, I've accumulated quite a few
+  demos, screenshots, videos and code snippets over the semester and no I need
+  to think about how to present them in a way that clearly shows the progression
+  of the project and the concepts I've learned.
+</p>
