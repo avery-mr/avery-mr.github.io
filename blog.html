@@ -573,39 +573,3 @@
   </body>
 </html>
 
-<p>
-  week I focused on setting up basic Phong lighting, which made me a little
-  nostalgic for the days I first started learning 3d modeling 25 years ago. I
-  worked through the ambient, diffuse, and specular lighting components and got
-  a much better understanding of how they each contribute to the final look and
-  how they interact with surface normals and camera position.
-</p>
-<p>
-  I created a scene with a large cube as the primary object and a second smaller
-  cube to represent the light source. The light cube has its own simple shader
-  while the main object uses a separate lighting shader. To make the scene a bit
-  more dynamic I made the light cube orbit the larger cube so I could see how
-  the lighting changed in real time as the light position moved.
-</p>
-<p>
-  I worked with the lighting calculations in both world space and view-space to
-  better understand the differences between the two approaches; neat to compare
-  the math side by side and see that, while the end result is similar, the
-  coordinate system changes how the calculations are performed. I spent some
-  time experimenting with different light colors, object colors, specular
-  strengths, shininess values, and other parameters to get a feel for how they
-  affect the final look. Adding even a very simple lighting setup made the scene
-  so much more visually interesting, and a few material attributes and tuning
-  the lighting parameters makes the plain cube feel much more like a 3d object
-  rather than colored shapes.
-</p>
-<p>
-  Next week I'll dive further into materials, probably look to create a
-  dedicated material class or struct to organize the material properties more
-  cleanly. I also plan to implement multiple light sources and distributions.
-  Outside of the coding work, I also need to start organizing a better
-  presentation of the project for my website, I've accumulated quite a few
-  demos, screenshots, videos and code snippets over the semester and no I need
-  to think about how to present them in a way that clearly shows the progression
-  of the project and the concepts I've learned.
-</p>
