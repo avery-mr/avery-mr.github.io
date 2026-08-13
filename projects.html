@@ -3,26 +3,447 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Mitchell Avery's OpenGL graphics programming project exploring the real-time rendering pipeline, shaders, transformations, textures, cameras, and lighting."
+    />
+
     <link rel="stylesheet" href="css/styles.css" />
-    <title>Projects</title>
+
+    <title>OpenGL Project | Mitchell Avery</title>
   </head>
 
   <body>
     <div class="container">
-      <header>
-        <h1>Projects</h1>
-        <nav>
+
+      <header class="site-header">
+        <a class="site-name" href="index.html">Mitchell Avery</a>
+
+        <nav aria-label="Main navigation">
           <a href="index.html">Home</a>
-          <a href="projects.html">Projects</a>
+          <a class="active" href="projects.html">Projects</a>
           <a href="blog.html">Blog</a>
-          <a href="resume.html">Profile</a>
+          <a href="resume.html">Resume</a>
           <a href="contact.html">Contact</a>
         </nav>
       </header>
-      <hr />
-      <section>
-        <h2>OpenGL Technical Graphics Portfolio</h2>
-      </section>
+
+
+      <main>
+
+        <!-- ==================================================
+             PROJECT INTRO
+             ================================================== -->
+
+        <section class="project-hero">
+
+          <div class="project-hero-copy">
+
+            <p class="eyebrow">Learning OpenGL</p>
+
+            <h1>Building a Real-Time Renderer from the Ground Up</h1>
+
+            <p class="lede">
+              This project explores the fundamentals of real-time graphics
+              programming through OpenGL.
+            </p>
+
+            <p>
+              Starting with an empty rendering window, I progressively built
+              the systems needed to display geometry, communicate with the GPU,
+              transform and texture objects, navigate a 3D environment, and
+              implement several forms of real-time lighting.
+            </p>
+
+            <p>
+              The goal was not to build a complete rendering engine, but to
+              develop a practical understanding of the graphics pipeline
+              underlying the 3D applications and real-time engines I use
+              professionally.
+            </p>
+
+            <p class="project-meta">
+              CSPB 3112 · Summer 2026
+            </p>
+
+          </div>
+
+
+          <div class="project-hero-media">
+
+            <span class="media-label">Final Real-Time Demo</span>
+
+            <video
+              controls
+              preload="metadata"
+              poster="assets/projects/final_demo_poster.png"
+            >
+              <source
+                src="assets/projects/final_fps_demo.mp4"
+                type="video/mp4"
+              />
+
+              Your browser does not support the video element.
+            </video>
+
+          </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             01 — STARTING POINT
+             ================================================== -->
+
+        <section class="project-section">
+
+          <div class="project-section-header">
+
+            <span class="project-section-number">01</span>
+
+            <h2>The Starting Point</h2>
+
+            <p class="project-subtitle">
+              From an Empty Window to the First Triangle
+            </p>
+
+          </div>
+
+
+          <div class="project-copy">
+
+            <p>
+              My starting point was intentionally simple: create an OpenGL
+              context, open a window, and establish a render loop. At this
+              stage, the application could respond to input, clear the
+              framebuffer, and continuously display the result—but it
+              contained no geometry.
+            </p>
+
+            <p>
+              Drawing the first triangle introduced the essential pieces of
+              the GPU rendering pipeline. Vertex data was transferred into a
+              buffer, a vertex array described how that data should be
+              interpreted, vertex and fragment shaders were compiled and
+              linked, and OpenGL was finally instructed to draw the geometry.
+            </p>
+
+          </div>
+
+
+          <div class="media-grid-two">
+
+            <figure class="media-item">
+
+              <img
+                src="assets/projects/01_rendered_window.png"
+                alt="OpenGL application displaying an empty rendered window"
+                loading="lazy"
+              />
+
+              <figcaption class="media-caption">
+                <span class="media-caption-title">
+                  Rendered Window
+                </span>
+
+                <p>
+                  The first working OpenGL context and continuous render loop.
+                </p>
+              </figcaption>
+
+            </figure>
+
+
+            <div class="media-arrow" aria-hidden="true">→</div>
+
+
+            <figure class="media-item">
+
+              <img
+                src="assets/projects/01_first_triangle.png"
+                alt="First triangle rendered with OpenGL"
+                loading="lazy"
+              />
+
+              <figcaption class="media-caption">
+                <span class="media-caption-title">
+                  First Triangle
+                </span>
+
+                <p>
+                  Geometry successfully passed through the graphics pipeline.
+                </p>
+              </figcaption>
+
+            </figure>
+
+          </div>
+
+
+          <aside class="takeaway">
+
+            <span class="takeaway-label">
+              Takeaway
+            </span>
+
+            <p>
+              <strong>The first major lesson:</strong>
+              displaying even a single triangle requires a chain of
+              communication between the application, OpenGL, and the GPU.
+            </p>
+
+          </aside>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             02 — BUILDING THE PIPELINE
+             ================================================== -->
+
+        <section class="project-section">
+
+          <div class="project-section-header">
+
+            <span class="project-section-number">02</span>
+
+            <h2>Building the Pipeline</h2>
+
+            <p class="project-subtitle">
+              How Does Data Become an Image?
+            </p>
+
+          </div>
+
+
+          <div class="pipeline-layout">
+
+            <div class="project-copy">
+
+              <p>
+                The early experiments became less about drawing individual
+                shapes and more about understanding how information moves
+                through the graphics pipeline.
+              </p>
+
+              <p>
+                Geometry begins as data in the C++ application. OpenGL
+                transfers that data to GPU memory and describes how its
+                attributes should be interpreted. The vertex shader processes
+                each vertex, rasterization determines which fragments the
+                geometry covers, and the fragment shader calculates the final
+                output for those fragments.
+              </p>
+
+              <p>
+                As I experimented with the pipeline, the information flowing
+                through it became increasingly complex: positions, colors,
+                texture coordinates, uniforms, time, user input, and
+                transformation matrices.
+              </p>
+
+            </div>
+
+
+            <div class="pipeline-diagram">
+
+              <div class="pipeline-title">
+                The Rendering Pipeline
+              </div>
+
+
+              <div class="pipeline-step">
+                <span class="pipeline-step-name">
+                  C++ Application
+                </span>
+
+                <span class="pipeline-step-note">
+                  vertex data / uniforms
+                </span>
+              </div>
+
+
+              <div class="pipeline-step">
+                <span class="pipeline-step-name">
+                  GPU Buffers
+                </span>
+
+                <span class="pipeline-step-note">
+                  stored in GPU memory
+                </span>
+              </div>
+
+
+              <div class="pipeline-step">
+                <span class="pipeline-step-name">
+                  Vertex Shader
+                </span>
+
+                <span class="pipeline-step-note">
+                  process each vertex
+                </span>
+              </div>
+
+
+              <div class="pipeline-step">
+                <span class="pipeline-step-name">
+                  Rasterization
+                </span>
+
+                <span class="pipeline-step-note">
+                  determine covered fragments
+                </span>
+              </div>
+
+
+              <div class="pipeline-step">
+                <span class="pipeline-step-name">
+                  Fragment Shader
+                </span>
+
+                <span class="pipeline-step-note">
+                  compute final color
+                </span>
+              </div>
+
+
+              <div class="pipeline-step">
+                <span class="pipeline-step-name">
+                  Framebuffer
+                </span>
+
+                <span class="pipeline-step-note">
+                  image stored for display
+                </span>
+              </div>
+
+
+              <div class="pipeline-step">
+                <span class="pipeline-step-name">
+                  Screen
+                </span>
+
+                <span class="pipeline-step-note">
+                  displayed to the user
+                </span>
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="evidence-strip">
+
+            <div class="evidence-strip-title">
+              Evidence from the Pipeline
+            </div>
+
+
+            <div class="evidence-grid">
+
+              <figure class="media-item">
+
+                <img
+                  src="assets/projects/02_vertex_color_attributes.png"
+                  alt="OpenGL triangle demonstrating per-vertex color attributes"
+                  loading="lazy"
+                />
+
+                <figcaption class="media-caption">
+
+                  <span class="media-caption-title">
+                    Vertex Color Attributes
+                  </span>
+
+                  <p>
+                    Passing per-vertex color data through buffers to the
+                    vertex shader.
+                  </p>
+
+                </figcaption>
+
+              </figure>
+
+
+              <figure class="media-item">
+
+                <img
+                  src="assets/projects/07_pulsing_bouncing_example.png"
+                  alt="OpenGL animation demonstrating shader uniforms and time-based movement"
+                  loading="lazy"
+                />
+
+                <figcaption class="media-caption">
+
+                  <span class="media-caption-title">
+                    Pulsing + Bouncing
+                  </span>
+
+                  <p>
+                    Using uniform time values and shader computation to animate
+                    the scene.
+                  </p>
+
+                </figcaption>
+
+              </figure>
+
+
+              <figure class="media-item">
+
+                <img
+                  src="assets/projects/05_texture_lerp_userCtrl.png"
+                  alt="OpenGL texture blending example with user-controlled interpolation"
+                  loading="lazy"
+                />
+
+                <figcaption class="media-caption">
+
+                  <span class="media-caption-title">
+                    Texture Lerp
+                  </span>
+
+                  <p>
+                    Sampling and blending multiple textures using a
+                    user-controlled mix value.
+                  </p>
+
+                </figcaption>
+
+              </figure>
+
+            </div>
+
+          </div>
+
+
+          <aside class="takeaway">
+
+            <span class="takeaway-label">
+              Takeaway
+            </span>
+
+            <p>
+              <strong>Shaders transformed the GPU</strong>
+              from somewhere I sent geometry into something I could program.
+            </p>
+
+          </aside>
+
+        </section>
+
+      </main>
+
+
+      <footer>
+        <p>© 2026 Mitchell Avery</p>
+      </footer>
+
     </div>
   </body>
 </html>
