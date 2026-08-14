@@ -34,11 +34,11 @@
        PROJECT INTRO
        ================================================== -->
 
-        <section class="project-hero">
+        <section class="project-hero project-hero-text-only">
           <div class="project-hero-copy">
             <p class="eyebrow">Learning OpenGL</p>
 
-            <h1>3D Rendering from the Ground Up</h1>
+            <h1>Building a Real-Time Renderer from the Ground Up</h1>
 
             <p class="lede">
               This project explores the fundamentals of real-time graphics
@@ -61,17 +61,6 @@
 
             <p class="project-meta">CSPB 3112 · Summer 2026</p>
           </div>
-
-          <div class="project-hero-media">
-            <span class="media-label">Final Real-Time Demo</span>
-
-            <video controls preload="metadata">
-              <source
-                src="assets/projects/final_fps_demo.mp4"
-                type="video/mp4"
-              />
-            </video>
-          </div>
         </section>
 
         <!-- ==================================================
@@ -91,17 +80,17 @@
             <p>
               My starting point was intentionally as simple as possible: create
               an OpenGL context, open a window, and establish a render loop. At
-              this stage, the application could respond to a single keystroke
+              this stage, the application can respond to a single keystroke
               input, clear the framebuffer, and continuously display the result.
-              But it contained no geometry.
+              But it contains no geometry.
             </p>
 
             <p>
-              Drawing the first triangle introduced the essential pieces of the
-              GPU rendering pipeline. Vertex data was transferred into a buffer,
-              a vertex array described how that data should be interpreted,
-              vertex and fragment shaders were compiled and linked, and OpenGL
-              was finally instructed to draw the geometry.
+              Drawing the first triangle introduces the essential pieces of the
+              GPU rendering pipeline. Vertex data is transferred into a buffer,
+              a vertex array describes how that data should be interpreted,
+              vertex and fragment shaders are compiled and linked, and OpenGL is
+              finally instructed to draw the geometry.
             </p>
           </div>
 
@@ -141,9 +130,12 @@
           <aside class="takeaway">
             <span class="takeaway-label">Takeaway</span>
             <p>
-              <strong>The first major lesson:</strong> displaying even a single
-              triangle requires a chain of communication between the
-              application, OpenGL, and the GPU.
+              <strong>Rendering is a pipeline:</strong> A triangle exposes the
+              full CPU-to-GPU path: application code defines and uploads vertex
+              data, configures how that data is interpreted, selects GPU
+              programs, and finally issues a draw call. Even the simplest
+              visible result depends on several pieces of graphics state being
+              configured correctly.
             </p>
           </aside>
         </section>
@@ -176,8 +168,8 @@
             </p>
 
             <p>
-              As the examples became more complex, the information moving
-              through this path expanded from positions into colors, texture
+              As the examples become more complex, the information moving
+              through this path expand from positions into colors, texture
               coordinates, normals, uniforms, time values, user input, and
               transformation matrices.
             </p>
@@ -186,23 +178,33 @@
           <div class="pipeline-layout">
             <div>
               <div class="buffer-grid">
-                <div class="buffer-card">
+                <button
+                  class="buffer-card code-card"
+                  type="button"
+                  data-dialog="dialog-vbo"
+                >
                   <span class="buffer-name">VBO</span>
                   <h3>Vertex Buffer Object</h3>
                   <p>
                     Stores vertex data in GPU memory so it can be consumed
                     efficiently during rendering.
                   </p>
-                </div>
+                  <span class="code-card-action">View Code →</span>
+                </button>
 
-                <div class="buffer-card">
+                <button
+                  class="buffer-card code-card"
+                  type="button"
+                  data-dialog="dialog-vao"
+                >
                   <span class="buffer-name">VAO</span>
                   <h3>Vertex Array Object</h3>
                   <p>
-                    Records how the values inside those buffers map to shader
-                    vertex attributes.
+                    Records how values inside those buffers map to shader vertex
+                    attributes.
                   </p>
-                </div>
+                  <span class="code-card-action">View Code →</span>
+                </button>
               </div>
             </div>
 
@@ -292,8 +294,12 @@
           <aside class="takeaway">
             <span class="takeaway-label">Takeaway</span>
             <p>
-              <strong>Shaders transformed the GPU</strong> from somewhere I sent
-              geometry into something I could program.
+              <strong>Shaders</strong> make the programmability of the pipeline
+              much more concrete. Vertex and fragment shaders are not just
+              settings applied to geometry; they are programs executed at
+              specific stages of the pipeline, with attributes, uniforms, and
+              interpolated values providing the interface between application
+              data and GPU computation.
             </p>
           </aside>
         </section>
@@ -311,10 +317,9 @@
 
           <div class="project-copy">
             <p>
-              A vertex eventually became much more than an XYZ position.
-              Depending on what the shader needed to calculate, each vertex
-              could also carry a surface normal, texture coordinates, and color
-              information.
+              A vertex quickly becomes much more than an XYZ position. Depending
+              on what the shader needed to calculate, each vertex can also carry
+              a surface normal, texture coordinates, and color information.
             </p>
 
             <p>
@@ -368,39 +373,57 @@
           </div>
 
           <div class="geometry-grid">
-            <div class="geometry-card">
+            <button
+              class="geometry-card code-card"
+              type="button"
+              data-dialog="dialog-triangle"
+            >
               <span class="geometry-index">01 / TRIANGLE</span>
               <h3>Explicit Vertices</h3>
               <p>
                 A handful of manually defined vertices made it easy to see
                 exactly what data was being sent to the GPU.
               </p>
-            </div>
+              <span class="code-card-action">View Code →</span>
+            </button>
 
-            <div class="geometry-card">
+            <button
+              class="geometry-card code-card"
+              type="button"
+              data-dialog="dialog-cube"
+            >
               <span class="geometry-index">02 / CUBE</span>
               <h3>Faces + Repeated Attributes</h3>
               <p>
                 A cube demonstrated why the same position can require different
                 normals or texture coordinates on different faces.
               </p>
-            </div>
+              <span class="code-card-action">View Code →</span>
+            </button>
 
-            <div class="geometry-card">
+            <button
+              class="geometry-card code-card"
+              type="button"
+              data-dialog="dialog-sphere"
+            >
               <span class="geometry-index">03 / SPHERE</span>
               <h3>Procedural Geometry</h3>
               <p>
                 The sphere moved beyond manually typed vertex arrays by
                 generating positions and surface data mathematically.
               </p>
-            </div>
+              <span class="code-card-action">View Code →</span>
+            </button>
           </div>
 
           <aside class="takeaway">
             <span class="takeaway-label">Takeaway</span>
             <p>
-              Geometry became a structured collection of attributes rather than
-              simply a collection of points.
+              <strong>Geometry </strong>becomes less about individual points and
+              more about structured vertex data. Position, color, normals, and
+              texture coordinates can all be packed into buffers as attributes,
+              while the VAO describes how that memory should be interpreted when
+              the GPU processes each vertex.
             </p>
           </aside>
         </section>
@@ -418,8 +441,8 @@
 
           <div class="project-copy">
             <p>
-              Until this point, most experiments could be understood primarily
-              in screen space. Building a true 3D scene required introducing a
+              Up to this point, most experiments could be understood primarily
+              in screen space. Building a true 3D scene requires introducing a
               hierarchy of coordinate systems.
             </p>
 
@@ -432,9 +455,9 @@
             </p>
 
             <p>
-              Combining those systems with keyboard and mouse input changed the
+              Combining those systems with keyboard and mouse input changes the
               character of the project: instead of manipulating isolated
-              examples, I could move through an interactive environment.
+              examples, I could now move through an interactive environment.
             </p>
           </div>
 
@@ -504,9 +527,11 @@
           <aside class="takeaway">
             <span class="takeaway-label">Takeaway</span>
             <p>
-              <strong>The camera was a turning point:</strong> the project
-              stopped feeling like a collection of rendered objects and started
-              feeling like an environment.
+              <strong>The camera </strong> makes the distinction between model,
+              world, view, and projection transformations much more tangible.
+              Moving through a scene is ultimately another transformation of
+              coordinate systems — the geometry is transformed relative to a
+              virtual observer before being projected into clip space.
             </p>
           </aside>
         </section>
@@ -526,7 +551,7 @@
             <p>
               A scene can have perspective, depth, textures, and camera movement
               while still providing very little information about the actual
-              form of its objects. Lighting introduced the relationship between
+              form of its objects. Lighting introduces the relationship between
               a surface, a light source, and the viewer.
             </p>
 
@@ -619,7 +644,7 @@
               <span class="section-label">Materials</span>
               <h3>Light Meets Material</h3>
               <p>
-                Diffuse and specular maps allowed different portions of the same
+                Diffuse and specular maps allow different portions of the same
                 object to respond differently to the same illumination.
               </p>
             </div>
@@ -660,234 +685,172 @@
             </div>
 
             <div class="light-study-grid">
-              <!-- ==================================================
-         01 — DIRECTIONAL / SURFACE ORIENTATION
-         ================================================== -->
+              <!-- DIRECTIONAL -->
 
-              <div class="light-study">
-                <figure class="light-study-media">
-                  <img
-                    src="assets/projects/04_directional_light.png"
-                    alt="OpenGL scene illuminated by a directional light"
-                    loading="lazy"
-                  />
-
-                  <figcaption class="media-caption">
-                    <span class="media-caption-title"> Directional Light </span>
-
-                    <p>A constant light direction applied across the scene.</p>
-                  </figcaption>
-                </figure>
-
-                <div class="light-study-content">
+              <section class="light-study">
+                <div class="light-study-header">
                   <span class="light-study-index">
                     01 / Surface Orientation
                   </span>
 
-                  <h4>Diffuse Lighting</h4>
+                  <h4>Directional Light</h4>
 
-                  <p class="light-study-meta">
-                    Direction · Surface Normal · Dot Product
+                  <p>
+                    Directional lighting uses a constant direction across the
+                    scene. Surface orientation determines how strongly each
+                    fragment receives diffuse illumination.
                   </p>
-
-                  <div class="light-tech">
-                    <div class="light-diagram">
-                      <pre>
-       LIGHT
-         ↘
-          ↘ lightDir
-
-             ↑ normal
-        ─────●─────
-           SURFACE
-</pre
-                      >
-                    </div>
-
-                    <div class="light-code">
-                      <pre><code>float diff = max(dot(norm, lightDir), 0.0);</code></pre>
-                    </div>
-
-                    <p class="light-explanation">
-                      The dot product measures how closely the surface normal
-                      aligns with the direction toward the light. Surfaces
-                      facing the light receive stronger diffuse illumination,
-                      while surfaces turned away receive less.
-                    </p>
-
-                    <p class="formula-note">
-                      dot(normal, lightDir) → value from -1.0 to 1.0
-                    </p>
-                  </div>
                 </div>
-              </div>
 
-              <!-- ==================================================
-         02 — POINT / DISTANCE
-         ================================================== -->
+                <div class="light-media-pair">
+                  <figure class="media-item">
+                    <img
+                      src="assets/directionalLight_AIsketch.webp"
+                      alt="Diagram explaining directional lighting and surface normals"
+                      loading="lazy"
+                    />
 
-              <div class="light-study">
-                <figure class="light-study-media">
-                  <img
-                    src="assets/projects/04_point_light.png"
-                    alt="OpenGL point light demonstrating distance attenuation"
-                    loading="lazy"
-                  />
+                    <figcaption class="media-caption">
+                      <span class="media-caption-title">
+                        Directional Lighting
+                      </span>
+                      <p>Surface orientation and incoming light direction.</p>
+                    </figcaption>
+                  </figure>
 
-                  <figcaption class="media-caption">
-                    <span class="media-caption-title"> Point Light </span>
+                  <figure class="media-item">
+                    <video controls preload="metadata">
+                      <source
+                        src="assets/projects/0805.1_directionalLight.mp4"
+                        type="video/mp4"
+                      />
+                    </video>
 
-                    <p>
-                      A positioned source whose influence decreases with
-                      distance.
-                    </p>
-                  </figcaption>
-                </figure>
+                    <figcaption class="media-caption">
+                      <span class="media-caption-title"> Result </span>
+                      <p>Directional illumination applied to the scene.</p>
+                    </figcaption>
+                  </figure>
+                </div>
+              </section>
 
-                <div class="light-study-content">
+              <!-- POINT -->
+
+              <section class="light-study">
+                <div class="light-study-header">
                   <span class="light-study-index"> 02 / Distance </span>
 
-                  <h4>Point-Light Attenuation</h4>
+                  <h4>Point Light</h4>
 
-                  <p class="light-study-meta">
-                    Position · Distance · Attenuation
+                  <p>
+                    A point light introduces a position. Its influence decreases
+                    as the distance between the light source and fragment
+                    increases.
                   </p>
-
-                  <div class="light-tech">
-                    <div class="light-diagram">
-                      <pre>
-              ● LIGHT
-
-            strongest
-
-        ↙               ↘
-
-              weaker
-
-     ↙                       ↘
-
-              weakest
-</pre
-                      >
-                    </div>
-
-                    <div class="light-code">
-                      <pre><code>float distance = length(light.position - FragPos);
-
-float attenuation =
-    1.0 /
-    (light.constant
-    + light.linear * distance
-    + light.quadratic * distance * distance);</code></pre>
-                    </div>
-
-                    <p class="light-explanation">
-                      Unlike a directional light, a point light has a location.
-                      Its contribution falls off as the distance between the
-                      light and fragment increases.
-                    </p>
-
-                    <p class="light-explanation">
-                      Constant, linear, and quadratic terms provide control over
-                      how quickly the light loses intensity, allowing the source
-                      to remain strong nearby while fading naturally through the
-                      scene.
-                    </p>
-                  </div>
                 </div>
-              </div>
 
-              <!-- ==================================================
-         03 — SPOTLIGHT / DIRECTION
-         ================================================== -->
+                <div class="light-media-pair">
+                  <figure class="media-item">
+                    <img
+                      src="assets/pointLight_AIsketch.webp"
+                      alt="Diagram explaining point-light distance attenuation"
+                      loading="lazy"
+                    />
 
-              <div class="light-study">
-                <figure class="light-study-media">
-                  <img
-                    src="assets/projects/04_spotlight.png"
-                    alt="OpenGL spotlight with inner and outer cone falloff"
-                    loading="lazy"
-                  />
+                    <figcaption class="media-caption">
+                      <span class="media-caption-title">
+                        Distance Attenuation
+                      </span>
+                      <p>
+                        Light intensity falling off with distance from the
+                        source.
+                      </p>
+                    </figcaption>
+                  </figure>
 
-                  <figcaption class="media-caption">
-                    <span class="media-caption-title">
-                      Camera-Controlled Spotlight
-                    </span>
+                  <figure class="media-item">
+                    <video controls preload="metadata">
+                      <source
+                        src="assets/projects/0805.2_point_light.mp4"
+                        type="video/mp4"
+                      />
+                    </video>
 
-                    <p>
-                      Position, direction, attenuation, and cone falloff
-                      combined.
-                    </p>
-                  </figcaption>
-                </figure>
+                    <figcaption class="media-caption">
+                      <span class="media-caption-title"> Result </span>
+                      <p>
+                        A positioned light radiating into the surrounding scene.
+                      </p>
+                    </figcaption>
+                  </figure>
+                </div>
+              </section>
 
-                <div class="light-study-content">
+              <!-- SPOTLIGHT -->
+
+              <section class="light-study">
+                <div class="light-study-header">
                   <span class="light-study-index"> 03 / Direction </span>
 
-                  <h4>Spotlight Cone Falloff</h4>
+                  <h4>Spotlight</h4>
 
-                  <p class="light-study-meta">
-                    Position + Direction · Inner Cone · Outer Cone
+                  <p>
+                    The spotlight combines position and distance attenuation
+                    with a directional cone. Inner and outer cutoff values
+                    provide a gradual transition at the edge of the beam.
                   </p>
-
-                  <div class="light-tech">
-                    <div class="light-diagram">
-                      <pre>
-                  direction
-                      ↓
-                   \     /
-                    \   /     outer cutoff
-                     \ /
-                     / \
-                    /   \     inner cutoff
-                   /     \
-</pre
-                      >
-                    </div>
-
-                    <div class="light-code">
-                      <pre><code>float theta =
-    dot(lightDir, normalize(-light.direction));
-
-float epsilon =
-    light.cutOff - light.outerCutOff;
-
-float intensity =
-    clamp(
-        (theta - light.outerCutOff) / epsilon,
-        0.0,
-        1.0
-    );</code></pre>
-                    </div>
-
-                    <p class="light-explanation">
-                      Comparing the direction toward a fragment with the
-                      direction of the spotlight determines whether the fragment
-                      lies inside the cone.
-                    </p>
-
-                    <p class="light-explanation">
-                      An inner and outer cutoff create a gradual transition
-                      instead of a hard edge. Fragments within the inner cone
-                      receive full intensity, fragments outside the outer cone
-                      receive none, and values between the two are interpolated.
-                    </p>
-
-                    <div class="light-code">
-                      <pre><code>light.position  = camera.Position;
-light.direction = camera.Front;</code></pre>
-                    </div>
-
-                    <p class="light-explanation">
-                      Tying both properties directly to the camera turns the
-                      spotlight calculation into a first-person flashlight that
-                      follows the viewer through the scene.
-                    </p>
-                  </div>
                 </div>
-              </div>
+
+                <div class="light-media-pair">
+                  <figure class="media-item">
+                    <img
+                      src="assets/spotlight_AIsketch.webp"
+                      alt="Diagram explaining spotlight direction and cone falloff"
+                      loading="lazy"
+                    />
+
+                    <figcaption class="media-caption">
+                      <span class="media-caption-title"> Spotlight Cone </span>
+                      <p>
+                        Position, direction, and inner and outer cutoff angles.
+                      </p>
+                    </figcaption>
+                  </figure>
+
+                  <figure class="media-item">
+                    <video controls preload="metadata">
+                      <source
+                        src="assets/projects/0805.3_spotlight_flashlight.mp4"
+                        type="video/mp4"
+                      />
+                    </video>
+
+                    <figcaption class="media-caption">
+                      <span class="media-caption-title">
+                        Camera-Controlled Spotlight
+                      </span>
+                      <p>
+                        The light's position and direction follow the
+                        first-person camera.
+                      </p>
+                    </figcaption>
+                  </figure>
+                </div>
+              </section>
             </div>
           </div>
+          <aside class="takeaway">
+            <span class="takeaway-label">Takeaway</span>
+            <p>
+              <strong>Lighting </strong>brings several earlier concepts together
+              at the fragment level. Surface normals, light direction, view
+              direction, material properties, and eventually distance and
+              cone-angle calculations all become inputs to the final pixel
+              color. Directional, point, and spot lights are therefore less like
+              fundamentally different systems and more like variations in how
+              those lighting vectors and intensities are calculated.
+            </p>
+          </aside>
         </section>
 
         <!-- ==================================================
@@ -990,9 +953,13 @@ light.direction = camera.Front;</code></pre>
           <aside class="takeaway">
             <span class="takeaway-label">Takeaway</span>
             <p style="color: #e8eaed">
-              Real-time graphics is not a single rendered result—it is a
-              continuously updated relationship between application state, GPU
-              state, input, and display.
+              <strong>A rendered frame</strong> is only a snapshot of
+              continuously changing state. Each pass through the render loop
+              updates input, camera and object transformations, uniforms,
+              textures, and other application or GPU state before issuing the
+              next set of draw calls. Real-time graphics emerges from that
+              repeated synchronization between the application and the graphics
+              pipeline.
             </p>
           </aside>
         </section>
@@ -1010,8 +977,8 @@ light.direction = camera.Front;</code></pre>
 
           <div class="project-copy">
             <p>
-              No individual step transformed the project into a renderer. The
-              final result emerged from combining many relatively small systems:
+              No individual step transforms the project into a renderer. The
+              final result emerges from combining many relatively small systems:
               GPU buffers and shaders, mesh data, transformations and coordinate
               spaces, textures and materials, camera controls, surface normals,
               and lighting calculations.
@@ -1020,7 +987,7 @@ light.direction = camera.Front;</code></pre>
             <p>
               The original triangle required a small collection of vertices, a
               VBO, a VAO, a shader program, and a draw call. By the later work,
-              the application combined structured geometry,
+              the application combines structured geometry,
               model/view/projection transforms, textures, materials, an
               interactive camera, depth testing, multiple lighting behaviors,
               and continuously updated per-frame state.
@@ -1030,7 +997,7 @@ light.direction = camera.Front;</code></pre>
           <div class="before-after">
             <figure class="media-item">
               <img
-                src="assets/projects/01_first_triangle.png"
+                src="assets/projects/02_first_triangle.png"
                 alt="First OpenGL triangle"
                 loading="lazy"
               />
@@ -1045,7 +1012,7 @@ light.direction = camera.Front;</code></pre>
             <figure class="media-item">
               <video controls preload="metadata">
                 <source
-                  src="assets/projects/final_fps_demo.mp4"
+                  src="assets/projects/final_fps.mp4"
                   type="video/mp4"
                 />
               </video>
@@ -1205,9 +1172,7 @@ light.direction = camera.Front;</code></pre>
           </div>
         </section>
 
-        <!-- ==================================================
-       END
-       ================================================== -->
+
 
         <section class="project-end">
           <div class="project-end-copy">
@@ -1231,5 +1196,262 @@ light.direction = camera.Front;</code></pre>
         <p>© 2026 Mitchell Avery</p>
       </footer>
     </div>
+
+
+    <dialog class="code-dialog" id="dialog-vbo">
+      <div class="code-dialog-header">
+        <div>
+          <span class="section-label">OpenGL / GPU Data</span>
+          <h2>Vertex Buffer Object</h2>
+        </div>
+
+        <button class="dialog-close" type="button" aria-label="Close">×</button>
+      </div>
+
+      <p>The VBO stores vertex data in GPU-accessible memory.</p>
+
+      <pre><code>
+
+unsigned int VBO;
+
+glGenBuffers(1, &VBO);
+
+glBindBuffer(
+    GL_ARRAY_BUFFER,
+    VBO
+);
+
+glBufferData(
+    GL_ARRAY_BUFFER,
+    sizeof(vertices),
+    vertices,
+    GL_STATIC_DRAW
+);</code></pre>
+    </dialog>
+
+    <dialog class="code-dialog" id="dialog-vao">
+      <div class="code-dialog-header">
+        <div>
+          <span class="section-label">OpenGL / Vertex Layout</span>
+          <h2>Vertex Array Object</h2>
+        </div>
+
+        <button class="dialog-close" type="button" aria-label="Close">×</button>
+      </div>
+
+      <p>
+        The VAO records the relationship between vertex-buffer data and shader
+        attribute locations.
+      </p>
+
+      <pre><code>
+
+unsigned int VAO;
+
+glGenVertexArrays(1, &VAO);
+glBindVertexArray(VAO);
+
+glVertexAttribPointer(
+    0,
+    3,
+    GL_FLOAT,
+    GL_FALSE,
+    stride,
+    (void*)0
+);
+
+glEnableVertexAttribArray(0);</code></pre>
+    </dialog>
+
+    <dialog class="code-dialog" id="dialog-triangle">
+      <div class="code-dialog-header">
+        <div>
+          <span class="section-label">Geometry / Triangle</span>
+          <h2>Explicit Vertices</h2>
+        </div>
+
+        <button class="dialog-close" type="button" aria-label="Close">×</button>
+      </div>
+
+      <pre><code>// Replace with exact project vertex data
+
+float vertices[] = {
+    // position
+    -0.5f, -0.5f, 0.0f,
+     0.5f, -0.5f, 0.0f,
+     0.0f,  0.5f, 0.0f
+};</code></pre>
+    </dialog>
+
+    <dialog class="code-dialog" id="dialog-cube">
+      <div class="code-dialog-header">
+        <div>
+          <span class="section-label">Geometry / Cube</span>
+          <h2>Faces + Vertex Attributes</h2>
+        </div>
+
+        <button class="dialog-close" type="button" aria-label="Close">×</button>
+      </div>
+
+      <p>
+        Cube vertices may repeat spatial positions because each face can require
+        its own normal and UV coordinates.
+      </p>
+
+      <pre><code>
+
+float cube_verts[] = {
+	// positions             // normals           // texture coords
+
+	// BACK FACE
+	-1.0f, -0.5f, -1.0f,     0.0f,  0.0f, -1.0f,   0.0f, 0.0f,
+	 1.0f, -0.5f, -1.0f,     0.0f,  0.0f, -1.0f,   1.0f, 0.0f,
+	 1.0f,  3.0f, -1.0f,     0.0f,  0.0f, -1.0f,   1.0f, 3.5f,
+	 1.0f,  3.0f, -1.0f,     0.0f,  0.0f, -1.0f,   1.0f, 3.5f,
+	-1.0f,  3.0f, -1.0f,     0.0f,  0.0f, -1.0f,   0.0f, 3.5f,
+	-1.0f, -0.5f, -1.0f,     0.0f,  0.0f, -1.0f,   0.0f, 0.0f,
+
+	// FRONT FACE
+	-1.0f, -0.5f,  1.0f,     0.0f,  0.0f,  1.0f,   0.0f, 0.0f,
+	 1.0f, -0.5f,  1.0f,     0.0f,  0.0f,  1.0f,   1.0f, 0.0f,
+	 1.0f,  3.0f,  1.0f,     0.0f,  0.0f,  1.0f,   1.0f, 3.5f,
+	 1.0f,  3.0f,  1.0f,     0.0f,  0.0f,  1.0f,   1.0f, 3.5f,
+	-1.0f,  3.0f,  1.0f,     0.0f,  0.0f,  1.0f,   0.0f, 3.5f,
+	-1.0f, -0.5f,  1.0f,     0.0f,  0.0f,  1.0f,   0.0f, 0.0f,
+
+	// LEFT FACE
+	-1.0f,  3.0f,  1.0f,    -1.0f,  0.0f,  0.0f,   1.0f, 3.5f,
+	-1.0f,  3.0f, -1.0f,    -1.0f,  0.0f,  0.0f,   0.0f, 3.5f,
+	-1.0f, -0.5f, -1.0f,    -1.0f,  0.0f,  0.0f,   0.0f, 0.0f,
+	-1.0f, -0.5f, -1.0f,    -1.0f,  0.0f,  0.0f,   0.0f, 0.0f,
+	-1.0f, -0.5f,  1.0f,    -1.0f,  0.0f,  0.0f,   1.0f, 0.0f,
+	-1.0f,  3.0f,  1.0f,    -1.0f,  0.0f,  0.0f,   1.0f, 3.5f,
+
+	// RIGHT FACE
+	 1.0f,  3.0f,  1.0f,     1.0f,  0.0f,  0.0f,   1.0f, 3.5f,
+	 1.0f,  3.0f, -1.0f,     1.0f,  0.0f,  0.0f,   0.0f, 3.5f,
+	 1.0f, -0.5f, -1.0f,     1.0f,  0.0f,  0.0f,   0.0f, 0.0f,
+	 1.0f, -0.5f, -1.0f,     1.0f,  0.0f,  0.0f,   0.0f, 0.0f,
+	 1.0f, -0.5f,  1.0f,     1.0f,  0.0f,  0.0f,   1.0f, 0.0f,
+	 1.0f,  3.0f,  1.0f,     1.0f,  0.0f,  0.0f,   1.0f, 3.5f,
+
+	 // BOTTOM FACE
+	 -1.0f, -0.5f, -1.0f,     0.0f, -1.0f,  0.0f,   0.0f, 1.0f,
+	  1.0f, -0.5f, -1.0f,     0.0f, -1.0f,  0.0f,   1.0f, 1.0f,
+	  1.0f, -0.5f,  1.0f,     0.0f, -1.0f,  0.0f,   1.0f, 0.0f,
+	  1.0f, -0.5f,  1.0f,     0.0f, -1.0f,  0.0f,   1.0f, 0.0f,
+	 -1.0f, -0.5f,  1.0f,     0.0f, -1.0f,  0.0f,   0.0f, 0.0f,
+	 -1.0f, -0.5f, -1.0f,     0.0f, -1.0f,  0.0f,   0.0f, 1.0f,
+
+	 // TOP FACE
+	 -1.0f,  3.0f, -1.0f,     0.0f,  1.0f,  0.0f,   0.0f, 1.0f,
+	  1.0f,  3.0f, -1.0f,     0.0f,  1.0f,  0.0f,   1.0f, 1.0f,
+	  1.0f,  3.0f,  1.0f,     0.0f,  1.0f,  0.0f,   1.0f, 0.0f,
+	  1.0f,  3.0f,  1.0f,     0.0f,  1.0f,  0.0f,   1.0f, 0.0f,
+	 -1.0f,  3.0f,  1.0f,     0.0f,  1.0f,  0.0f,   0.0f, 0.0f,
+	 -1.0f,  3.0f, -1.0f,     0.0f,  1.0f,  0.0f,   0.0f, 1.0f
+};
+  </code></pre>
+    </dialog>
+
+    <dialog class="code-dialog" id="dialog-sphere">
+      <div class="code-dialog-header">
+        <div>
+          <span class="section-label">Geometry / Sphere</span>
+          <h2>Procedural Generation</h2>
+        </div>
+
+        <button class="dialog-close" type="button" aria-label="Close">×</button>
+      </div>
+
+      <p>
+        The sphere calculates vertices algorithmically rather than storing every
+        position manually.
+      </p>
+
+      <pre><code>
+for (unsigned int y = 0; y <= verticalSegments; y++)
+{
+	float v = static_cast<float>(y) / static_cast<float>(verticalSegments);
+
+	float phi = v * glm::pi<float>();
+
+	for (unsigned int x = 0; x <= horizontalSegments; x++)
+	{
+		float u = static_cast<float>(x) / static_cast<float>(horizontalSegments);
+
+		float theta = u * glm::two_pi<float>();
+
+		glm::vec3 position;
+
+		position.x = std::sin(phi) * std::cos(theta);
+		position.y = std::cos(phi);
+		position.z = std::sin(phi) * std::sin(theta);
+
+		SphereVertex vertex;
+
+		vertex.position = position;
+		vertex.color = glm::vec3(1.0f);
+		vertex.texCoords = glm::vec2(u, v);
+
+		vertices.push_back(vertex);
+
+	}
+}
+
+for (unsigned int y = 0; y < verticalSegments; y++)
+{
+	for (unsigned int x = 0; x < horizontalSegments; x++)
+	{
+		unsigned int topLeft = y * (horizontalSegments + 1) + x;
+
+		unsigned int bottomLeft = (y + 1) * (horizontalSegments + 1) + x;
+
+		unsigned int topRight = topLeft + 1;
+		unsigned int bottomRight = bottomLeft + 1;
+
+		indices.push_back(topLeft);
+		indices.push_back(bottomLeft);
+		indices.push_back(topRight);
+
+		indices.push_back(topRight);
+		indices.push_back(bottomLeft);
+		indices.push_back(bottomRight);
+	}
+}</code></pre>
+    </dialog>
+    <script>
+      document.querySelectorAll("[data-dialog]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const dialog = document.getElementById(button.dataset.dialog);
+
+          if (dialog) {
+            dialog.showModal();
+          }
+        });
+      });
+
+      document.querySelectorAll(".dialog-close").forEach((button) => {
+        button.addEventListener("click", () => {
+          button.closest("dialog").close();
+        });
+      });
+
+      document.querySelectorAll(".code-dialog").forEach((dialog) => {
+        dialog.addEventListener("click", (event) => {
+          const rect = dialog.getBoundingClientRect();
+
+          const inside =
+            event.clientX >= rect.left &&
+            event.clientX <= rect.right &&
+            event.clientY >= rect.top &&
+            event.clientY <= rect.bottom;
+
+          if (!inside) {
+            dialog.close();
+          }
+        });
+      });
+    </script>
   </body>
 </html>
