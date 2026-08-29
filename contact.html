@@ -3,39 +3,84 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Contact Mitchell Avery — email, GitHub, visualization portfolio, and LinkedIn."
+    />
+
     <link rel="stylesheet" href="css/styles.css" />
-    <title>Contact</title>
+
+    <title>Contact | Mitchell Avery</title>
   </head>
 
   <body>
     <div class="container">
-      <header>
-        <h1>Contact</h1>
-        <nav>
+      <header class="site-header">
+        <a class="site-name" href="index.html">Mitchell Avery</a>
+
+        <nav aria-label="Main navigation">
           <a href="index.html">Home</a>
           <a href="projects.html">Projects</a>
           <a href="blog.html">Blog</a>
-          <a href="resume.html">Resume</a>
-          <a href="contact.html">Contact</a>
+          <a href="resume.html">Profile</a>
+          <a class="active" href="contact.html">Contact</a>
         </nav>
       </header>
-      <hr />
-      <section>
-        <h2>Contact Information</h2>
 
-        <p>Email: mitchell.avery@colorado.edu</p>
-        <p>
-          Github:
-          <a href="http://github.com/avery-mr">github.com/avery-mr</a>
-        </p>
-        <p>Visualization Portfolio: 
-            <a href="http://avery-digital.com">avery-digital.com</a>
-        </p>
-        <p>Linked-In:
-          <a href="www.linkedin.com/in/mitchellavery">linkedin.com/in/mitchellavery</a>
+      <main>
+        <section class="page-intro">
+          <p class="eyebrow">Get in Touch</p>
 
-        </p>
-      </section>
+          <h1>Contact</h1>
+
+          <p class="lede">
+            Email is the most reliable way to reach me. Links to code, visual
+            work, and professional profile are below.
+          </p>
+        </section>
+
+        <section class="contact-list" aria-label="Contact information">
+          <a class="contact-card" href="mailto:mitchell.avery@colorado.edu">
+            <span class="contact-label">Email</span>
+            <strong>mitchell.avery@colorado.edu</strong>
+          </a>
+
+          <a
+            class="contact-card"
+            href="https://github.com/avery-mr"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="contact-label">GitHub</span>
+            <strong>github.com/avery-mr</strong>
+          </a>
+
+          <a
+            class="contact-card"
+            href="https://avery-digital.com"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="contact-label">Visualization Portfolio</span>
+            <strong>avery-digital.com</strong>
+          </a>
+
+          <a
+            class="contact-card"
+            href="https://www.linkedin.com/in/mitchellavery"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="contact-label">LinkedIn</span>
+            <strong>linkedin.com/in/mitchellavery</strong>
+          </a>
+        </section>
+      </main>
+
+      <footer>
+        <p>© 2026 Mitchell Avery</p>
+      </footer>
     </div>
   </body>
 </html>
